@@ -7,6 +7,7 @@ import { dragDropDropdownPage } from '../pages/drag-drop-dropdown';
 import { adFloatingPage } from '../pages/entry-ad-floating-menu-page';
 import { uploadDownloadPage } from '../pages/upload-download-file';
 import { alertPage } from '../pages/alert';
+import { hoverSliderPage } from '../pages/hover-and-slider-page';
 
 type Fixtures = {
   home: homePage;
@@ -17,6 +18,7 @@ type Fixtures = {
   adFloat: adFloatingPage;
   uploadDownload: uploadDownloadPage;
   alert: alertPage;
+  hoverSlider: hoverSliderPage;
 
 };
 
@@ -60,5 +62,10 @@ export const test = base.extend<Fixtures>({
   alert: async ({ page }, use) => {
     const alert = new alertPage(page);
     await use(alert);
+  },
+
+  hoverSlider: async ({ page }, use) => {
+    const hoverSlider = new hoverSliderPage(page);
+    await use(hoverSlider);
   },
 });
