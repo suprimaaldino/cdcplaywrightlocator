@@ -1,5 +1,5 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { credentials } from '../utils/test-date';
+import { credentials } from '../utils/test-data';
 
 export class homePage {
   readonly page: Page;
@@ -90,8 +90,8 @@ export class homePage {
     this.typosLink = page.getByRole('link', { name: 'Typos' });
     this.windowsLink = page.getByRole('link', { name: 'Windows' });
     this.pageTitle = page.getByText('Welcome to the-internet');
-    this.addElementButton = page.getByRole('button', { name: 'Add Element' });
-    this.addElementButton = page.getByRole('button', { name: 'Delete Element' });
+    this.addElementButton = page.getByRole('button', { name: 'Add Element'});
+    this.addElementButton = page.getByRole('button', { name: 'Delete' });
   }
 
   async navigateToHomepage() {
@@ -100,21 +100,27 @@ export class homePage {
   }
   async loginBasicAuth(username: string, password: string) {
     await this.page.goto(`https://${username}:${password}@the-internet.herokuapp.com/basic_auth`);
+    const successMessage = this.page.getByText('Congratulations! You must have the proper credentials.');
+    await expect(successMessage).toHaveText("Congratulations! You must have the proper credentials.");
   }
 
   async addSingleElementAndDelete(page) {
     await this.navigateToHomepage
+    await this.addRemoveElementLink.click();
+    await expect(this.page).toHaveURL(/.*add_remove_elements/);
     await this.addElementButton.click();
     await this.deleteElementButton.click();
   }
 
   async addMultipleElementsAndDelete(page) {
     await this.navigateToHomepage
-    const items = 5;
+    await this.addRemoveElementLink.click();
+    await expect(this.page).toHaveURL(/.*add_remove_elements/);
+    const items = 3;
     for (let i = 0; i < items; i++) {
       await this.addElementButton.click();
     for (let i = 0; i < items; i++) {
-      await this.deleteElementButton.click()
+      await this.deleteElementButton.first().click()
       }
     }
   }

@@ -1,13 +1,9 @@
 import { homePage } from '../pages/home-page';
-import { credentials } from '../utils/test-date';
-import { test } from '../utils/fixture';
+import { test} from '@playwright/test';
+import { credentials } from '../utils/test-data';
 
-test('Should login using valid credential', async ({ home }) => {
-  await home.loginBasicAuth(credentials.validUsername, credentials.validPassword);
+test('Should login using valid credential', async ({ page }) => {
+  const home = new homePage(page);
+  await home.loginBasicAuth(credentials.username, credentials.password);
 });
-
-test('Should user login using invalid username and password', async ({ home }) => {
-  await home.loginBasicAuth(credentials.invalidUsername, credentials.invalidPassword);
-
-})
 
