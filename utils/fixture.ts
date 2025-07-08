@@ -5,6 +5,7 @@ import { checkboxPage } from '../pages/checkbox-page';
 import { contextMenuPage } from '../pages/context-menu-page';
 import { dragDropDropdownPage } from '../pages/drag-drop-dropdown';
 import { adFloatingPage } from '../pages/entry-ad-floating-menu-page';
+import { uploadDownloadPage } from '../pages/upload-download-file';
 
 type Fixtures = {
   home: homePage;
@@ -13,6 +14,7 @@ type Fixtures = {
   contextMenu: contextMenuPage;
   dragDropdown: dragDropDropdownPage;
   adFloat: adFloatingPage;
+  uploadDownload: uploadDownloadPage
 
 };
 
@@ -48,4 +50,8 @@ export const test = base.extend<Fixtures>({
     await use(adFloat);
   },
 
+  uploadDownload: async ({ page }, use) => {
+    const uploadDownload = new uploadDownloadPage(page);
+    await use(uploadDownload);
+  },
 });
