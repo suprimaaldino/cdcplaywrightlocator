@@ -17,15 +17,18 @@ export class checkboxPage {
         this.secondCheckbox = page.locator('input[type="checkbox"]').nth(1);
 
     }
-    async checkSingleCheckbox() {
+    async goToCheckboxPage() {
         await this.checkboxesLink.click();
         await expect(this.page).toHaveURL(/.*checkboxes/);
+    }
+
+    async checkSingleCheckbox() {
+        await this.goToCheckboxPage();
         await this.firstCheckbox.check();
     }
 
     async checkMultiCheckbox() {
-        await this.checkboxesLink.click();
-        await expect(this.page).toHaveURL(/.*checkboxes/);
+        await this.goToCheckboxPage();
         await this.firstCheckbox.check();
         const isSecondCheckboxChecked = await this.secondCheckbox.isChecked();
         if (!await this.secondCheckbox.isChecked()) {

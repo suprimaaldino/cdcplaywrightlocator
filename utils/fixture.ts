@@ -6,6 +6,7 @@ import { contextMenuPage } from '../pages/context-menu-page';
 import { dragDropDropdownPage } from '../pages/drag-drop-dropdown';
 import { adFloatingPage } from '../pages/entry-ad-floating-menu-page';
 import { uploadDownloadPage } from '../pages/upload-download-file';
+import { alertPage } from '../pages/alert';
 
 type Fixtures = {
   home: homePage;
@@ -14,7 +15,8 @@ type Fixtures = {
   contextMenu: contextMenuPage;
   dragDropdown: dragDropDropdownPage;
   adFloat: adFloatingPage;
-  uploadDownload: uploadDownloadPage
+  uploadDownload: uploadDownloadPage;
+  alert: alertPage;
 
 };
 
@@ -53,5 +55,10 @@ export const test = base.extend<Fixtures>({
   uploadDownload: async ({ page }, use) => {
     const uploadDownload = new uploadDownloadPage(page);
     await use(uploadDownload);
+  },
+
+  alert: async ({ page }, use) => {
+    const alert = new alertPage(page);
+    await use(alert);
   },
 });
