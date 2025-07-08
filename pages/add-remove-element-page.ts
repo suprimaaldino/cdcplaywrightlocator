@@ -1,9 +1,7 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { credentials } from '../utils/test-data';
 
 export class addRemovePage {
   readonly page: Page;
-  readonly url: string = 'https://the-internet.herokuapp.com/';
   readonly addElementButton: Locator;
   readonly deleteElementButton: Locator;
   readonly addRemoveElementLink: Locator;

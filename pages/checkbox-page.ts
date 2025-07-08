@@ -1,5 +1,4 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { credentials } from '../utils/test-data';
 
 export class checkboxPage {
     readonly page: Page;
@@ -14,8 +13,8 @@ export class checkboxPage {
         this.page = page;
 
         this.checkboxesLink = page.getByRole('link', { name: 'Checkboxes' });
-        this.firstCheckbox = page.locator('input[type="checkbox"]');
-        this.secondCheckbox = page.locator('input[type="checkbox"]');
+        this.firstCheckbox = page.locator('input[type="checkbox"]').nth(0);
+        this.secondCheckbox = page.locator('input[type="checkbox"]').nth(1);
 
     }
     async checkSingleCheckbox() {
