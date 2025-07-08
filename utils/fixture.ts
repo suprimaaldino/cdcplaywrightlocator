@@ -2,14 +2,15 @@ import { test as base } from '@playwright/test';
 import { homePage } from '../pages/home-page';
 import { addRemovePage } from '../pages/add-remove-element-page';
 import { checkboxPage } from '../pages/checkbox-page';
-import { contextMenuPage} from '../pages/context-menu-page';
-
+import { contextMenuPage } from '../pages/context-menu-page';
+import { dragDropDropdownPage } from '../pages/drag-drop-dropdown';
 
 type Fixtures = {
   home: homePage;
   addRemove: addRemovePage;
   checkBox: checkboxPage;
   contextMenu: contextMenuPage;
+  dragDropdown: dragDropDropdownPage;
 };
 
 export const test = base.extend<Fixtures>({
@@ -29,8 +30,13 @@ export const test = base.extend<Fixtures>({
     await use(checkBox);
   },
 
-   contextMenu: async ({ page }, use) => {
+  contextMenu: async ({ page }, use) => {
     const context = new contextMenuPage(page);
     await use(context);
+  },
+  
+  dragDropdown: async ({ page }, use) => {
+    const dragDropdown = new dragDropDropdownPage(page);
+    await use(dragDropdown);
   },
 });
