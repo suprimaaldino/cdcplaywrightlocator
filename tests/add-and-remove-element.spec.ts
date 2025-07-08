@@ -1,4 +1,3 @@
-import { addRemovePage } from '../pages/add-remove-element-page';
 import { test } from '../utils/fixture';
 
 test('Should user add and delete single item', async ({ home, addRemove }) => {

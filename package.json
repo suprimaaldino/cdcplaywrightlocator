@@ -9,7 +9,7 @@
     "chromium:headed": "npx playwright test --project=chromium --headed",
     "headed": "npx playwright test --headed",
     "debug": "npx playwright test --debug",
-    "codegen": "npx playwright test codegen",
+    "codegen": "npx playwright codegen",
     "ui": "npx playwright test --ui"
   },
   "keywords": [],
