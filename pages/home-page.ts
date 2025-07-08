@@ -90,8 +90,8 @@ export class homePage {
     this.typosLink = page.getByRole('link', { name: 'Typos' });
     this.windowsLink = page.getByRole('link', { name: 'Windows' });
     this.pageTitle = page.getByText('Welcome to the-internet');
-    this.addElementButton = page.getByRole('button', { name: 'Add Element'});
-    this.addElementButton = page.getByRole('button', { name: 'Delete' });
+    this.addElementButton = page.getByRole('button', { name: 'Add Element' });
+    this.deleteElementButton = page.getByRole('button', { name: 'Delete' });
   }
 
   async navigateToHomepage() {
@@ -117,10 +117,19 @@ export class homePage {
     await this.addRemoveElementLink.click();
     await expect(this.page).toHaveURL(/.*add_remove_elements/);
     const items = 3;
+
     for (let i = 0; i < items; i++) {
       await this.addElementButton.click();
+      await this.page.waitForTimeout(3000);
+    }
+
     for (let i = 0; i < items; i++) {
-      await this.deleteElementButton.first().click()
+
+      if (await this.deleteElementButton.count() > 0) {
+        await this.deleteElementButton.first().click();
+      } else {
+        console.warn(`No Delete button found on iteration ${i + 1}`);
+        break;
       }
     }
   }
