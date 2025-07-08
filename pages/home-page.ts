@@ -4,13 +4,6 @@ import { credentials } from '../utils/test-data';
 export class homePage {
   readonly page: Page;
   readonly url: string = 'https://the-internet.herokuapp.com/';
-
-  readonly abTestingLink: Locator;
-  readonly addRemoveElementLink: Locator;
-  readonly basicAuthLink: Locator;
-  readonly brokenImagesLink: Locator;
-  readonly challengingDomLink: Locator;
-  readonly checkboxesLink: Locator;
   readonly contextMenuLink: Locator;
   readonly digestAuthLink: Locator;
   readonly dragAndDropLink: Locator;
@@ -44,19 +37,11 @@ export class homePage {
   readonly typosLink: Locator;
   readonly windowsLink: Locator;
   readonly pageTitle: Locator;
-  readonly addElementButton: Locator;
-  readonly deleteElementButton: Locator;
+
 
   constructor(page: Page) {
     this.page = page;
-
-    // 🔗 Link locators
-    this.abTestingLink = page.getByRole('link', { name: 'A/B Testing' });
-    this.addRemoveElementLink = page.getByRole('link', { name: 'Add/Remove Elements' });
-    this.basicAuthLink = page.getByRole('link', { name: 'Basic Auth' });
-    this.brokenImagesLink = page.getByRole('link', { name: 'Broken Images' });
-    this.challengingDomLink = page.getByRole('link', { name: 'Challenging DOM' });
-    this.checkboxesLink = page.getByRole('link', { name: 'Checkboxes' });
+    
     this.contextMenuLink = page.getByRole('link', { name: 'Context Menu' });
     this.digestAuthLink = page.getByRole('link', { name: 'Digest Authentication' });
     this.dragAndDropLink = page.getByRole('link', { name: 'Drag and Drop' });
@@ -90,47 +75,15 @@ export class homePage {
     this.typosLink = page.getByRole('link', { name: 'Typos' });
     this.windowsLink = page.getByRole('link', { name: 'Windows' });
     this.pageTitle = page.getByText('Welcome to the-internet');
-    this.addElementButton = page.getByRole('button', { name: 'Add Element' });
-    this.deleteElementButton = page.getByRole('button', { name: 'Delete' });
+  
   }
-
-  async navigateToHomepage() {
+async navigateToHomepage() {
     await this.page.goto(this.url);
     await expect(this.pageTitle).toHaveText('Welcome to the-internet');
   }
-  async loginBasicAuth(username: string, password: string) {
-    await this.page.goto(`https://${username}:${password}@the-internet.herokuapp.com/basic_auth`);
-    const successMessage = this.page.getByText('Congratulations! You must have the proper credentials.');
-    await expect(successMessage).toHaveText("Congratulations! You must have the proper credentials.");
-  }
-
-  async addSingleElementAndDelete(page) {
-    await this.navigateToHomepage
-    await this.addRemoveElementLink.click();
-    await expect(this.page).toHaveURL(/.*add_remove_elements/);
-    await this.addElementButton.click();
-    await this.deleteElementButton.click();
-  }
-
-  async addMultipleElementsAndDelete(page) {
-    await this.navigateToHomepage
-    await this.addRemoveElementLink.click();
-    await expect(this.page).toHaveURL(/.*add_remove_elements/);
-    const items = 3;
-
-    for (let i = 0; i < items; i++) {
-      await this.addElementButton.click();
-      await this.page.waitForTimeout(3000);
-    }
-
-    for (let i = 0; i < items; i++) {
-
-      if (await this.deleteElementButton.count() > 0) {
-        await this.deleteElementButton.first().click();
-      } else {
-        console.warn(`No Delete button found on iteration ${i + 1}`);
-        break;
-      }
-    }
-  }
+async loginBasicAuth(username: string, password: string) {
+  await this.page.goto(`https://${username}:${password}@the-internet.herokuapp.com/basic_auth`);
+  const successMsg = this.page.getByText('Congratulations! You must have the proper credentials.');
+  await expect(successMsg).toHaveText("Congratulations! You must have the proper credentials.");
+}
 }
