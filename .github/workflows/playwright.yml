@@ -8,11 +8,11 @@ on:
 
 jobs:
   test:
-    name: Run Playwright tests across shards
+    name: Run Playwright tests with 3 shards
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        shard: [0, 1, 2]
+        shard: [1, 2, 3]  # 👈 3 shards total (Playwright expects 1-based index)
       fail-fast: false
 
     steps:
