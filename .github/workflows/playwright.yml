@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -14,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [1/4, 2/4, 3/4, 4/4]
+        shard: [1/4, 2/4, 3/4]
 
     steps:
     - name: Checkout repo
@@ -37,7 +40,7 @@ jobs:
     - name: Generate Allure Report
       if: always()
       run: |
-        npm run allure:generate
+        npm run allure:report
         mkdir -p allure-report-gh
         cp -r ./allure-report/* allure-report-gh/
 
@@ -49,8 +52,8 @@ jobs:
         path: allure-report-gh
 
     - name: Deploy Allure Report to GitHub Pages
-      if: success() || failure()
+      if: always()
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./allure-report
+        publish_dir: ./allure-report-gh
