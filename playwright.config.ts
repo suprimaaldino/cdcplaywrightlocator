@@ -4,47 +4,60 @@ import { defineConfig, devices } from '@playwright/test'
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
+// Uncomment below to load environment variables (recommended for secret mgmt)
 // import dotenv from 'dotenv';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 /**
- * See https://playwright.dev/docs/test-configuration.
+ * Playwright test configuration.
+ * See: https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
   testDir: './tests',
 
-  /* Run tests in files in parallel */
+  /* Run tests in parallel within each file (not across files unless using sharding) */
   fullyParallel: true,
-  /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  // reporter: 'html',
-  reporter: [['allure-playwright']],
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  use: {
-    /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://localhost:3000',
 
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+  /* Prevent accidental use of test.only in CI builds */
+  forbidOnly: !!process.env.CI,
+
+  /* Retry failed tests on CI to handle flakiness */
+  retries: process.env.CI ? 2 : 0,
+
+  /* Limit to 1 worker on CI to avoid resource issues */
+  workers: process.env.CI ? 1 : undefined,
+
+  /* Reporter options: you can combine reporters (e.g., HTML + Allure) */
+  // reporter: [['list'], ['html'], ['allure-playwright']],
+  reporter: [['allure-playwright']],
+
+  /* Global test options */
+  use: {
+    /* Useful if you have a base URL (e.g., in staging or production env) */
+    // baseURL: process.env.BASE_URL || 'http://localhost:3000',
+
+    /* Automatically collect trace on retry to debug flaky tests */
     trace: 'on-first-retry',
+
+    // Optional: enable video only on failure (helpful for debugging)
+    // video: 'retain-on-failure',
+
+    // Optional: enable screenshot on failure
+    // screenshot: 'only-on-failure',
   },
 
-  /* Configure projects for major browsers */
+  /* Define browser-specific projects */
   projects: [
-    // Desktop Browser
-    // {
-    //   name: 'chromium', // renamed from 'chromium'
-    //   use: { ...devices['Desktop Chrome']},
-    // },
-    // {
-    //   name: 'Desktop Edge', // renamed from 'Microsoft Edge'
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
+    // ─── Desktop Browsers ────────────────────────────────────────
+    {
+      name: 'Dekstop Chrome', // Google Chrome
+      use: { ...devices['Desktop Chrome'], channel: 'chromium' },
+    },
+    {
+      name: 'Desktop Edge',
+      use: { ...devices['Desktop Edge'], channel: 'msedge' },
+    },
     {
       name: 'Desktop Firefox',
       use: { ...devices['Desktop Firefox'] },
@@ -54,7 +67,7 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     },
 
-    // Mobile Browsers
+    // ─── Mobile Emulation ────────────────────────────────────────
     {
       name: 'Mobile Chrome',
       use: { ...devices['Pixel 5'] },
@@ -65,10 +78,13 @@ export default defineConfig({
     },
   ],
 
-  /* Run your local dev server before starting the tests */
+  /* Optional: Start dev server before tests (E2E testing) */
   // webServer: {
   //   command: 'npm run start',
   //   url: 'http://localhost:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
-})
+
+  // Suggestion: Enable test artifacts output folder (optional)
+  // outputDir: 'test-results',
+});

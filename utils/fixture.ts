@@ -19,53 +19,45 @@ type Fixtures = {
   uploadDownload: uploadDownloadPage;
   alert: alertPage;
   hoverSlider: hoverSliderPage;
-
 };
 
 export const test = base.extend<Fixtures>({
+  // Navigate once at beginning
   home: async ({ page }, use) => {
     const home = new homePage(page);
-    await home.navigateToHomepage();
+    await home.navigateToHomepage(); // only once here
     await use(home);
   },
 
   addRemove: async ({ page }, use) => {
-    const addRemove = new addRemovePage(page);
-    await use(addRemove);
+    await use(new addRemovePage(page));
   },
 
   checkBox: async ({ page }, use) => {
-    const checkBox = new checkboxPage(page);
-    await use(checkBox);
+    await use(new checkboxPage(page));
   },
 
   contextMenu: async ({ page }, use) => {
-    const context = new contextMenuPage(page);
-    await use(context);
+    await use(new contextMenuPage(page));
   },
 
   dragDropdown: async ({ page }, use) => {
-    const dragDropdown = new dragDropDropdownPage(page);
-    await use(dragDropdown);
+    await use(new dragDropDropdownPage(page));
   },
 
   adFloat: async ({ page }, use) => {
-    const adFloat = new adFloatingPage(page);
-    await use(adFloat);
+    await use(new adFloatingPage(page));
   },
 
   uploadDownload: async ({ page }, use) => {
-    const uploadDownload = new uploadDownloadPage(page);
-    await use(uploadDownload);
+    await use(new uploadDownloadPage(page));
   },
 
   alert: async ({ page }, use) => {
-    const alert = new alertPage(page);
-    await use(alert);
+    await use(new alertPage(page));
   },
 
   hoverSlider: async ({ page }, use) => {
-    const hoverSlider = new hoverSliderPage(page);
-    await use(hoverSlider);
+    await use(new hoverSliderPage(page));
   },
 });

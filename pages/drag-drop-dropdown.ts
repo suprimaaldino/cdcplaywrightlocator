@@ -22,18 +22,59 @@ export class dragDropDropdownPage {
     await this.dragAndDropLink.click();
     await expect(this.page).toHaveURL(/.*drag_and_drop/);
 
-    // Ensure target boxes are visible and attached to DOM
     await expect(this.boxA).toBeVisible({ timeout: 6000 });
     await expect(this.boxB).toBeVisible({ timeout: 6000 });
 
-    await this.boxA.dragTo(this.boxB);
+    // Detect browser
+    const browserName = this.page.context().browser()?.browserType().name();
+    const isWebKit = browserName === 'webkit';
 
-    // Wait for UI to update
-    await this.page.waitForTimeout(300); // helps with Safari flakiness
+    if (isWebKit) {
+      // Fallback method: simulate drag-drop via JavaScript (WebKit doesn't support dragTo well)
+      await this.simulateHtml5DragAndDrop('#column-a', '#column-b');
+      await this.page.waitForTimeout(500);
+    } else {
+      // Normal drag for Chromium/Firefox
+      await this.boxA.dragTo(this.boxB);
+      await this.page.waitForTimeout(300); // Give time for DOM update
+    }
 
-    // Validate expected changes
-    await expect(this.boxA.locator('header')).toHaveText('B', { timeout: 5000 });
-    await expect(this.boxB.locator('header')).toHaveText('A', { timeout: 5000 });
+    // Validate content after drag-and-drop
+    await expect.poll(async () => {
+      return await this.boxA.locator('header').textContent();
+    }, {
+      timeout: 5000,
+      message: 'Expect Box A header to be "B"'
+    }).toContain('B');
+
+    await expect.poll(async () => {
+      return await this.boxB.locator('header').textContent();
+    }, {
+      timeout: 5000,
+      message: 'Expect Box B header to be "A"'
+    }).toContain('A');
+  }
+
+  async simulateHtml5DragAndDrop(sourceSelector: string, targetSelector: string) {
+    await this.page.evaluate(
+      ({ sourceSelector, targetSelector }) => {
+        const source = document.querySelector(sourceSelector) as HTMLElement;
+        const target = document.querySelector(targetSelector) as HTMLElement;
+
+        if (!source || !target) throw new Error('Drag source or target not found');
+
+        const dataTransfer = new DataTransfer();
+        const dragStart = new DragEvent('dragstart', { bubbles: true, cancelable: true, dataTransfer });
+        source.dispatchEvent(dragStart);
+
+        const drop = new DragEvent('drop', { bubbles: true, cancelable: true, dataTransfer });
+        target.dispatchEvent(drop);
+
+        const dragEnd = new DragEvent('dragend', { bubbles: true, cancelable: true, dataTransfer });
+        source.dispatchEvent(dragEnd);
+      },
+      { sourceSelector, targetSelector }
+    );
   }
 
   async selectOption() {

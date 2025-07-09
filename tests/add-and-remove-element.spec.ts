@@ -9,7 +9,7 @@ test.describe('Element Handling - Smoke Tests', () => {
 
 // @regression @ui
 test.describe('Element Handling - Regression Tests', () => {
-  test('should allow user to add and delete multiple items', async ({ home, addRemove }) => {
+  test('should allow user to add and delete multiple items', async ({ home,addRemove }) => {
     await addRemove.addMultipleElementsAndDelete(5);
   });
 });
