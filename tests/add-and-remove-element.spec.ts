@@ -1,9 +1,15 @@
 import { test } from '../utils/fixture';
 
-test('Should user add and delete single item', async ({ home, addRemove }) => {
-  await addRemove.addSingleElementAndDelete();
+// @smoke @ui
+test.describe('Element Handling - Smoke Tests', () => {
+  test('should allow user to add and delete a single item', async ({ home, addRemove }) => {
+    await addRemove.addSingleElementAndDelete();
+  });
 });
 
-test('Should user add and delete multiple items', async ({ home, addRemove }) => {
-  await addRemove.addMultipleElementsAndDelete(5);
+// @regression @ui
+test.describe('Element Handling - Regression Tests', () => {
+  test('should allow user to add and delete multiple items', async ({ home, addRemove }) => {
+    await addRemove.addMultipleElementsAndDelete(5);
+  });
 });
