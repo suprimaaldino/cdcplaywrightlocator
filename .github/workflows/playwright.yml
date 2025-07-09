@@ -91,7 +91,13 @@ jobs:
       - name: Notify Telegram of CI completion
         if: always()
         run: |
-          MESSAGE="✅ Playwright tests completed.\nView Allure report: https://suprimaaldino.github.io/cdcplaywrightlocator/"
-          curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage \
-          -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
+          if [ "${{ job.status }}" == "success" ]; then
+            STATUS="✅ Playwright tests passed"
+          else
+            STATUS="❌ Playwright tests failed"
+          fi
+          TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
+          MESSAGE="$STATUS\n🕒 Completed at: $TIMESTAMP\n📊 View Allure report: https://suprimaaldino.github.io/cdcplaywrightlocator/"
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+          -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
           -d text="$MESSAGE"
