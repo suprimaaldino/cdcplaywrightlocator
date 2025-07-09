@@ -49,34 +49,13 @@ export default defineConfig({
 
   /* Define browser-specific projects */
   projects: [
-    // ─── Desktop Browsers ────────────────────────────────────────
-    {
-      name: 'Dekstop Chrome', // Google Chrome
-      use: { ...devices['Desktop Chrome'], channel: 'chromium' },
-    },
-    {
-      name: 'Desktop Edge',
-      use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    },
-    {
-      name: 'Desktop Firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-    {
-      name: 'Desktop Safari',
-      use: { ...devices['Desktop Safari'] },
-    },
-
-    // ─── Mobile Emulation ────────────────────────────────────────
-    {
-      name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
-    },
-    {
-      name: 'Mobile Safari',
-      use: { ...devices['iPhone 12'] },
-    },
-  ],
+  { name: 'Desktop Chrome', use: { browserName: 'chromium' } },
+  { name: 'Desktop Edge', use: { channel: 'msedge' } },
+  { name: 'Desktop Firefox', use: { browserName: 'firefox' } },
+  { name: 'Desktop Safari', use: { browserName: 'webkit' } },
+  { name: 'Mobile Chrome', use: devices['Pixel 5'] },
+  { name: 'Mobile Safari', use: devices['iPhone 12'] },
+],
 
   /* Optional: Start dev server before tests (E2E testing) */
   // webServer: {
