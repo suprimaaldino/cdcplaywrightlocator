@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test'
 
 /**
  * Read environment variables from file.
@@ -38,12 +38,12 @@ export default defineConfig({
   projects: [
     // Desktop Browser
     {
-      name: 'Desktop Chrome',
+      name: 'Desktop Chrome', // renamed from 'chromium'
       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
     {
-      name: 'Desktop Edge',
-      use: { ...devices['Desktop Edge'], channel: 'msedge' },
+      name: 'Desktop Edge', // renamed from 'Microsoft Edge'
+      use: { ...devices['Microsoft Edge'], channel: 'msedge' },
     },
     {
       name: 'Desktop Firefox',
@@ -71,4 +71,4 @@ export default defineConfig({
   //   url: 'http://localhost:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
-});
+})
