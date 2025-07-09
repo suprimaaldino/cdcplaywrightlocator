@@ -4,7 +4,6 @@ import { credentials } from '../utils/test-data';
 export class homePage {
   readonly page: Page;
   readonly url: string = 'https://the-internet.herokuapp.com/';
-  readonly contextMenuLink: Locator;
   readonly digestAuthLink: Locator;
   readonly dragAndDropLink: Locator;
   readonly dropdownLink: Locator;
@@ -42,7 +41,6 @@ export class homePage {
   constructor(page: Page) {
     this.page = page;
     
-    this.contextMenuLink = page.getByRole('link', { name: 'Context Menu' });
     this.digestAuthLink = page.getByRole('link', { name: 'Digest Authentication' });
     this.dragAndDropLink = page.getByRole('link', { name: 'Drag and Drop' });
     this.dropdownLink = page.getByRole('link', { name: 'Dropdown' });

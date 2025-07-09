@@ -12,18 +12,20 @@ export class addRemovePage {
     this.addElementButton = page.getByRole('button', { name: 'Add Element' });
     this.deleteElementButton = page.getByRole('button', { name: 'Delete' });
   }
-
-  async addSingleElementAndDelete() {
+  async goToAddRemoveElementPage() {
     await this.addRemoveElementLink.click();
     await expect(this.page).toHaveURL(/.*add_remove_elements/);
+  }
+
+
+  async addSingleElementAndDelete() {
+    await this.goToAddRemoveElementPage();
     await this.addElementButton.click();
     await this.deleteElementButton.click();
   }
 
   async addMultipleElementsAndDelete(items: number) {
-    await this.addRemoveElementLink.click();
-    await expect(this.page).toHaveURL(/.*add_remove_elements/);
-
+    await this.goToAddRemoveElementPage();
     for (let i = 0; i < items; i++) {
       await this.addElementButton.click();
       await this.page.waitForTimeout(3000);

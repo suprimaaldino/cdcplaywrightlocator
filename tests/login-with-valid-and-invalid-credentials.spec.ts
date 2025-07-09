@@ -1,4 +1,4 @@
-import { homePage } from '../pages/home-page';
+
 import { credentials } from '../utils/test-data';
 import { test } from '../utils/fixture';
 
