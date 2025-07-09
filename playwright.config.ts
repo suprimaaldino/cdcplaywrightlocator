@@ -38,12 +38,12 @@ export default defineConfig({
   projects: [
     // Desktop Browser
     {
-      name: 'Desktop Chrome', // renamed from 'chromium'
+      name: 'chromium', // renamed from 'chromium'
       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
     {
       name: 'Desktop Edge', // renamed from 'Microsoft Edge'
-      use: { ...devices['Microsoft Edge'], channel: 'msedge' },
+      use: { ...devices['Desktop Edge'], channel: 'msedge' },
     },
     {
       name: 'Desktop Firefox',
