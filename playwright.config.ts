@@ -36,40 +36,33 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    // Desktop Browser
     {
-      name: 'Dekstop Chrome',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'Desktop Chrome',
+      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
-
+    {
+      name: 'Desktop Edge',
+      use: { ...devices['Desktop Edge'], channel: 'msedge' },
+    },
     {
       name: 'Desktop Firefox',
       use: { ...devices['Desktop Firefox'] },
     },
+    {
+      name: 'Desktop Safari',
+      use: { ...devices['Desktop Safari'] },
+    },
 
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
-
-    // Test against mobile viewports.
+    // Mobile Browsers
     {
       name: 'Mobile Chrome',
       use: { ...devices['Pixel 5'] },
     },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
-
-    /* Test against branded browsers. */
     {
-      name: 'Dekstop Edge',
-      use: { ...devices['Desktop Edge'], channel: 'msedge' },
+      name: 'Mobile Safari',
+      use: { ...devices['iPhone 12'] },
     },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
   ],
 
   /* Run your local dev server before starting the tests */
