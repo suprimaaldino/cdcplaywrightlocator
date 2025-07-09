@@ -1,9 +1,15 @@
 import { test } from '../utils/fixture';
 
-test('Should user check single checkbox', async ({ home, checkBox }) => {
+// @regression @ui
+test.describe('Checkbox Interaction - Regression Tests', () => {
+  test('checks a single checkbox successfully', async ({ home, checkBox }) => {
     await checkBox.checkSingleCheckbox();
+  });
 });
 
-test('Should user check multiple checkboxes', async({home,checkBox}) => {
+// @regression @ui
+test.describe('Checkbox Interaction - Regression Tests', () => {
+  test('checks multiple checkboxes successfully', async ({ home, checkBox }) => {
     await checkBox.checkMultiCheckbox();
+  });
 });

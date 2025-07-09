@@ -1,10 +1,16 @@
 import { uploadDownloadPage } from '../pages/upload-download-file';
 import { test } from '../utils/fixture';
 
-test('Should user able to download file', async ({ home, uploadDownload }) => {
-  await uploadDownload.verifyDownloadingFile();
+// @ui @regression
+test.describe('File Download Feature - Regression Test', () => {
+  test('downloads a file successfully', async ({ home, uploadDownload }) => {
+    await uploadDownload.verifyDownloadingFile();
+  });
 });
 
-test('Should user is able to upload file', async ({home,uploadDownload}) => {
- await uploadDownload.verifyUploadingFile
+// @ui @regression
+test.describe('File Upload Feature - Regression Test', () => {
+  test('uploads a file successfully', async ({ home, uploadDownload }) => {
+    await uploadDownload.verifyUploadingFile(); // ← Fixed missing parentheses
+  });
 });
