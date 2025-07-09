@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [1/3, 2/3, 3/3]
+        shard: [1-3, 2-3, 3-3]
 
     steps:
     - name: Checkout repo
@@ -35,7 +35,10 @@ jobs:
       run: npx playwright install --with-deps
 
     - name: Run Playwright tests (sharded)
-      run: npx playwright test --shard=${{ matrix.shard }}
+      run: |
+        shard_value=${{ matrix.shard }}
+        shard_value=${shard_value/-/\/}
+        npx playwright test --shard=$shard_value
 
     - name: Upload allure-results artifact
       if: always()
