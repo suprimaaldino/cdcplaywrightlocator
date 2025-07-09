@@ -11,6 +11,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -104,10 +108,9 @@ jobs:
 
           🕒 Completed at: $TIMESTAMP  
           📊 [View Allure report]($REPORT_URL)
-          EOF
-          )
+          EOF)
           echo "Sending Telegram notification..."
           curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
-             -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
-             -d parse_mode="Markdown" \
-             --data-urlencode "text=$MESSAGE"
+            -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -d parse_mode="Markdown" \
+            --data-urlencode "text=$MESSAGE"
