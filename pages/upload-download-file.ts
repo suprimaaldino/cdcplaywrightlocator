@@ -25,7 +25,7 @@ export class uploadDownloadPage {
     await this.fileDownloadLink.click();
     await expect(this.page).toHaveURL(/.*download/);
 
-    await expect(this.fileDownload).toBeVisible({ timeout: 8000 }); // make sure link appears
+    await expect(this.fileDownload).toBeVisible({ timeout: 8000 });
 
     const rawText = await this.fileDownload.textContent();
     const fileName = rawText?.trim();
@@ -34,13 +34,23 @@ export class uploadDownloadPage {
     const timestamp = Date.now();
     const sanitizedName = fileName.replace(/\s+/g, '-').toLowerCase().replace(/\.[^/.]+$/, '');
     const finalFileName = `${sanitizedName}-${timestamp}.txt`;
+    const finalFilePath = `downloads/${finalFileName}`;
+
+    // Optional cleanup before download
+    try {
+      if (fs.existsSync(finalFilePath)) {
+        fs.unlinkSync(finalFilePath);
+      }
+    } catch (error) {
+      console.warn(`Failed to delete existing file ${finalFilePath}:`, error);
+    }
 
     const [download] = await Promise.all([
       this.page.waitForEvent('download'),
       this.fileDownload.click()
     ]);
 
-    await download.saveAs(`downloads/${finalFileName}`);
+    await download.saveAs(finalFilePath);
     const suggested = download.suggestedFilename();
     expect(suggested).toContain(fileName);
   }
