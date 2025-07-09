@@ -50,12 +50,12 @@ export default defineConfig({
   /* Define browser-specific projects */
   projects: [
   { name: 'Desktop Chrome', use: { browserName: 'chromium' } },
-  { name: 'Desktop Edge', use: { channel: 'msedge' } },
+  { name: 'Desktop Edge', use: { browserName: 'chromium', channel: 'msedge' } },
   { name: 'Desktop Firefox', use: { browserName: 'firefox' } },
   { name: 'Desktop Safari', use: { browserName: 'webkit' } },
-  { name: 'Mobile Chrome', use: devices['Pixel 5'] },
-  { name: 'Mobile Safari', use: devices['iPhone 12'] },
-],
+  { name: 'Mobile Chrome', use: { browserName: 'chromium', viewport: { width: 375, height: 667 }, deviceScaleFactor: 2 } },
+  { name: 'Mobile Safari', use: { browserName: 'webkit', viewport: { width: 375, height: 667 }, deviceScaleFactor: 2 } },
+]
 
   /* Optional: Start dev server before tests (E2E testing) */
   // webServer: {

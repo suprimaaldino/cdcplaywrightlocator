@@ -8,18 +8,11 @@ on:
 
 jobs:
   test:
-    name: Run Playwright tests
+    name: Run Playwright tests across shards
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        browser: [
-          Desktop Chrome,
-          Desktop Edge,
-          Desktop Firefox,
-          Desktop Safari,
-          Mobile Chrome,
-          Mobile Safari
-        ]
+        shard: [0, 1, 2]
       fail-fast: false
 
     steps:
@@ -37,16 +30,15 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run tests on ${{ matrix.browser }}
-        env:
-          PLAYWRIGHT_PROJECT: ${{ matrix.browser }}
+      - name: Run tests on shard ${{ matrix.shard }}
         run: |
-          npx playwright test --project="${{ env.PLAYWRIGHT_PROJECT }}" --reporter=dot,line,allure-playwright
+          npx playwright test --shard=${{ matrix.shard }}/3 \
+            --reporter=dot,line,allure-playwright
 
       - name: Upload Allure results
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results-${{ matrix.browser }}
+          name: allure-results-shard-${{ matrix.shard }}
           path: ./allure-results
 
   merge-allure-reports:
@@ -66,15 +58,14 @@ jobs:
 
       - name: Install Allure CLI
         run: npm install -g allure-commandline@2.24.0
-        timeout-minutes: 1
 
       - name: Clean old Allure results and reports
         run: rm -rf ./allure-results ./allure-report
 
-      - name: Download Allure results from all jobs
+      - name: Download Allure results from all shards
         uses: actions/download-artifact@v4
         with:
-          pattern: allure-results-*
+          pattern: allure-results-shard-* 
           merge-multiple: true
           path: ./allure-results
 
@@ -85,7 +76,6 @@ jobs:
             exit 1
           fi
           allure generate ./allure-results --clean -o ./allure-report
-        timeout-minutes: 1
 
       - name: Upload Allure report as artifact
         uses: actions/upload-artifact@v4
