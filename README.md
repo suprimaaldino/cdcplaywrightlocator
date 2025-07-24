@@ -96,4 +96,3 @@ npm run remove:allure
 
 ---
 
-💡 *Fork and adapt this template for your own Playwright + Allure projects!*
