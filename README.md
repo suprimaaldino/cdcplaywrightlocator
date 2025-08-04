@@ -46,6 +46,7 @@
 ├── package.json                # 📦 Project metadata, dependencies, and scripts
 ├── playwright.config.ts        # ⚙️ Main configuration for Playwright test execution
 └── README.md                   # 📝 Project overview, setup instructions, and usage guide
+└── CHANGELOG.md                # 📜 Auto-generated changelog entries based on Conventional Commits
 ```
 
 ---
