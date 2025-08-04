@@ -12,6 +12,10 @@
 > * 📈 Allure reporting for rich test insights
 > * 🌐 Auto-deployed test reports to GitHub Pages
 > * 🔔 Telegram notifications on CI results
+> * 🔄 Rollback logic triggered on failed deploys or artifact mismatch
+> * 📜 Auto-generated changelog via Conventional Commits and npm run changelog
+
+
 
 ---
 
