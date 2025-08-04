@@ -89,10 +89,14 @@ npm run remove:allure
 ## 📢 CI Features
 
 * ✅ Runs on every push & pull request to `main`
+* 🕗 Scheduled daily runs at 08:00 UTC
 * 🧹 Splits test runs into 3 shards for faster results
 * 📆 Uploads Allure artifacts automatically
-* 📬 Sends Telegram notification upon completion
+* 🧬 Merges results into a unified Allure repor
 * 🖥️ Publishes Allure report to GitHub Pages
+* 🧯 Rollback logic restores previous report if tests fail
+* 📝 Auto-generates CHANGELOG.md on updates to `main`
+* 📬 Sends Telegram notification upon completion
 
 ---
 
