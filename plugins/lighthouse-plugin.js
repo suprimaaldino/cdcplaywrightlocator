@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', function() {
-  // Add Lighthouse button to Allure navigation
   const sidebar = document.querySelector('.side-nav__brand');
   if (sidebar) {
     const lighthouseBtn = document.createElement('a');
