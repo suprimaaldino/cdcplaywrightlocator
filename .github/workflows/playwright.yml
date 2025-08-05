@@ -1,8 +1,8 @@
-name: Playwright Tests with Allure
+name: Playwright Tests with Allure and Lighthouse
 
 on:
   schedule:
-    - cron: '0 8 * * *'  
+    - cron: '0 8 * * *'  # Runs daily at 08:00 UTC
   push:
     branches: [main]
   pull_request:
@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright Browsers
+      - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
       - name: Run tests on shard ${{ matrix.shard }}
@@ -46,11 +46,42 @@ jobs:
           name: allure-results-shard-${{ matrix.shard }}
           path: ./allure-results
 
+
+  audit-performance:
+    name: Run Lighthouse Audit
+    runs-on: ubuntu-latest
+    needs: test
+    continue-on-error: true  # Don't break pipeline if Lighthouse fails
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Lighthouse
+        run: npm install -g lighthouse
+
+      - name: Run Lighthouse audit
+        run: |
+          lighthouse https://suprimaaldino.github.io/cdcplaywrightlocator/ \
+            --output=json,html \
+            --output-path=./lighthouse/lighthouse-report \
+            --chrome-flags="--headless" \
+            --preset=desktop \
+            --disable-gatherers=Interactive
+
+      - name: Upload Lighthouse report
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: ./lighthouse
+
+
   merge-allure-reports:
     name: Merge Allure Reports and Deploy
     runs-on: ubuntu-latest
-    needs: test
-    timeout-minutes: 10
+    needs: [test, audit-performance]
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
@@ -64,38 +95,52 @@ jobs:
       - name: Install Allure CLI
         run: npm install -g allure-commandline@2.24.0
 
-      - name: Clean old Allure results and reports
-        run: rm -rf ./allure-results ./allure-report
+      - name: Clean old results and reports
+        run: rm -rf ./allure-results ./allure-report ./lighthouse
 
       - name: Backup previous Allure report
         run: |
           if [ -d "./allure-report" ]; then
-            echo "Backing up existing report..."
+            echo "Backing up previous report..."
             mv ./allure-report ./allure-report-backup
           fi
 
       - name: Download Allure results from all shards
         uses: actions/download-artifact@v4
         with:
-          pattern: allure-results-shard-* 
+          pattern: allure-results-shard-*
           merge-multiple: true
           path: ./allure-results
 
+      - name: Download Lighthouse report
+        uses: actions/download-artifact@v4
+        with:
+          name: lighthouse-report
+          path: ./lighthouse
+        if: success() || failure()
+
       - name: Generate Allure report
         run: |
-          if [ ! -d "./allure-results" ]; then
-            echo "No allure-results found!"
-            echo "Rolling back to previous report..."
+          if [ ! -d "./allure-results" ] || [ -z "$(ls -A ./allure-results)" ]; then
+            echo "No test results found. Attempting rollback..."
             if [ -d "./allure-report-backup" ]; then
               mv ./allure-report-backup ./allure-report
-              echo "Rollback complete."
+              echo "Rolled back to previous report."
               exit 0
             else
-              echo "No backup found. Cannot rollback."
+              echo "No backup available. Cannot generate report."
               exit 1
             fi
           fi
           allure generate ./allure-results --clean -o ./allure-report
+
+      - name: Add Lighthouse report to Allure
+        run: |
+          if [ -f "./lighthouse/lighthouse-report.html" ]; then
+            mkdir -p ./allure-report/lighthouse
+            cp ./lighthouse/lighthouse-report.html ./allure-report/lighthouse/
+            echo "Lighthouse report embedded."
+          fi
 
       - name: Upload Allure report as artifact
         uses: actions/upload-artifact@v4
@@ -108,6 +153,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report
+          keep_files: false  # Ensures old files are cleared
 
       - name: Notify Telegram of CI completion
         if: always()
@@ -119,7 +165,7 @@ jobs:
           fi
 
           if [ -d "./allure-report-backup" ] && [ ! -d "./allure-results" ]; then
-            STATUS="⚠️ *Playwright tests failed — rolled back to previous report*"
+            STATUS="⚠️ *Tests failed — rolled back to previous report*"
           fi
 
           TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
@@ -128,8 +174,9 @@ jobs:
           MESSAGE=$(cat <<EOF
           $STATUS
 
-          🕒 Completed at: $TIMESTAMP  
-          📊 [View Allure report]($REPORT_URL)
+          🕑 Completed at: $TIMESTAMP
+          📊 [View Allure Report]($REPORT_URL)
+          🔍 Lighthouse audit included (see 'lighthouse/' folder in report)
           EOF
           )
 
@@ -139,6 +186,7 @@ jobs:
             -d parse_mode="Markdown" \
             --data-urlencode "text=$MESSAGE"
 
+
   generate-changelog:
     name: Generate Changelog
     runs-on: ubuntu-latest
@@ -146,10 +194,10 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
-      - name: 🧾 Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: 🛠️ Generate changelog
+      - name: Generate changelog
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
         with:
@@ -159,23 +207,10 @@ jobs:
           skip-commit: true
           skip-tag: true
 
-      - name: 🔍 Debug changelog content
-        run: |
-          echo "=== CHANGELOG.md ==="
-          cat CHANGELOG.md || echo "CHANGELOG.md not found"
-          echo "=== Git Status ==="
-          git status
-
-      - name: 🧙‍♂️ Commit updated changelog if changed
+      - name: Commit updated changelog
         run: |
           git config user.name "CI Bot"
           git config user.email "ci@bot.com"
           git add CHANGELOG.md
-
-          if git diff --cached --quiet; then
-            echo "🛡️ No changes to commit. Changelog is up to date."
-          else
-            git commit -m "docs: update changelog [skip ci]"
-            git push
-            echo "✅ Changelog committed and pushed."
-          fi
+          git commit -m "docs: update changelog [skip ci]"
+          git push
