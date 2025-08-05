@@ -481,13 +481,13 @@ jobs:
           force_orphan: false
           commit_message: 'Deploy Allure report - ${{ github.sha }}'
 
-      # ✅ NOTIFIKASI TELEGRAM UTAMA (SUDAH DIPERBAIKI)
       - name: Notify Telegram of CI completion
         if: always()
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
+          # Skip if secrets not set
           if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
             echo "⚠️ Telegram secrets not configured. Skipping notification."
             exit 0
@@ -495,9 +495,11 @@ jobs:
 
           echo "🔄 Preparing final CI status notification..."
 
+          # Get job statuses
           TEST_STATUS="${{ needs.test.result }}"
           DEPLOY_STATUS="${{ job.status }}"
 
+          # Determine emoji and status
           if [ "$TEST_STATUS" == "success" ] && [ "$DEPLOY_STATUS" == "success" ]; then
             EMOJI="✅"
             STATUS="Passed"
@@ -509,6 +511,7 @@ jobs:
             STATUS="Completed with issues"
           fi
 
+          # Build message
           TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
           SHORT_SHA="${GITHUB_SHA:0:7}"
           REPORT_URL="https://suprimaaldino.github.io/cdcplaywrightlocator/"
@@ -520,4 +523,29 @@ jobs:
           • 🕒 $TIMESTAMP
           • 🔖 \`$SHORT_SHA\`
           ━━━━━━━━━━━━━
-          📈
+          📈 [View Test Report]($REPORT_URL)
+          🔄 [Workflow Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+
+          echo "📤 Sending message to Telegram..."
+          echo "--- MESSAGE SENT ---"
+          echo "$MESSAGE"
+          echo "--- END MESSAGE ---"
+
+          # Send to Telegram (safe JSON encoding with jq)
+          RESPONSE=$(curl -s -X POST \
+            "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"chat_id\": \"$TELEGRAM_CHAT_ID\",
+              \"text\": $(echo "$MESSAGE" | jq -R -s '.'),
+              \"parse_mode\": \"Markdown\",
+              \"disable_web_page_preview\": false
+            }")
+
+          # Check response
+          if echo "$RESPONSE" | jq -e '.ok == true' >/dev/null; then
+            echo "✅ Telegram notification sent successfully!"
+          else
+            echo "❌ Failed to send Telegram notification"
+            echo "💬 Response: $RESPONSE"
+          fi
