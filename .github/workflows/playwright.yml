@@ -146,10 +146,10 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
-      - name: Checkout repository
+      - name: 🧾 Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate changelog
+      - name: 🛠️ Generate changelog
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
         with:
@@ -159,10 +159,23 @@ jobs:
           skip-commit: true
           skip-tag: true
 
-      - name: Commit updated changelog
+      - name: 🔍 Debug changelog content
+        run: |
+          echo "=== CHANGELOG.md ==="
+          cat CHANGELOG.md || echo "CHANGELOG.md not found"
+          echo "=== Git Status ==="
+          git status
+
+      - name: 🧙‍♂️ Commit updated changelog if changed
         run: |
           git config user.name "CI Bot"
           git config user.email "ci@bot.com"
           git add CHANGELOG.md
-          git commit -m "docs: update changelog [skip ci]"
-          git push
+
+          if git diff --cached --quiet; then
+            echo "🛡️ No changes to commit. Changelog is up to date."
+          else
+            git commit -m "docs: update changelog [skip ci]"
+            git push
+            echo "✅ Changelog committed and pushed."
+          fi
