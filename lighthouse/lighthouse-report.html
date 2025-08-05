@@ -22,6 +22,20 @@
         .warning { color: #f57c00; font-size: 18px; margin-bottom: 20px; }
         .info { color: #666; line-height: 1.6; }
         .timestamp { font-size: 12px; color: #999; margin-top: 30px; }
+        .links { margin-top: 30px; }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background: #007AFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        .btn:hover { background: #0056CC; }
+        .btn-secondary { background: #34C759; }
+        .btn-secondary:hover { background: #28A745; }
     </style>
 </head>
 <body>
@@ -39,9 +53,13 @@
             </ul>
             <p>The audit will be retried in the next workflow run.</p>
         </div>
+        <div class="links">
+            <a href="../" class="btn btn-secondary">⬅️ Back to Test Report</a>
+            <a href="https://github.com/suprimaaldino/cdcplaywrightlocator/actions" class="btn" target="_blank">🔄 View Workflow</a>
+        </div>
         <div class="timestamp">
-            Generated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')<br>
-            Workflow: Playwright Tests with Allure and Lighthouse #79
+            Generated: 2025-08-05 05:20:10 UTC<br>
+            Workflow: Playwright Tests with Allure and Lighthouse #80
         </div>
     </div>
 </body>

@@ -1,1 +1,5 @@
-[]
+{
+  "Lighthouse Report": "lighthouse/lighthouse-report.html",
+  "Performance Audit": "Available",
+  "Report Type": "Integrated"
+}
