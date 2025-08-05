@@ -1,24 +1,11 @@
 window.addEventListener('DOMContentLoaded', function() {
   const sidebar = document.querySelector('.side-nav__brand');
   if (sidebar) {
-    const lighthouseBtn = document.createElement('a');
-    lighthouseBtn.href = 'lighthouse/lighthouse-report.html';
-    lighthouseBtn.target = '_blank';
-    lighthouseBtn.innerHTML = '⚡ Lighthouse Audit';
-    lighthouseBtn.style.cssText = `
-      display: block;
-      padding: 10px 15px;
-      margin: 10px 0;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: 500;
-      text-align: center;
-      transition: all 0.3s ease;
-    `;
-    lighthouseBtn.onmouseover = () => lighthouseBtn.style.transform = 'scale(1.02)';
-    lighthouseBtn.onmouseout = () => lighthouseBtn.style.transform = 'scale(1)';
-    sidebar.appendChild(lighthouseBtn);
+    const btn = document.createElement('a');
+    btn.href = 'lighthouse/lighthouse-report.html';
+    btn.target = '_blank';
+    btn.textContent = '⚡ Lighthouse Audit';
+    btn.style.cssText = 'display:block; padding:10px; margin:10px 0; background:linear-gradient(135deg,#667eea,#764ba2); color:white; text-align:center; border-radius:5px; text-decoration:none;';
+    sidebar.appendChild(btn);
   }
 });
