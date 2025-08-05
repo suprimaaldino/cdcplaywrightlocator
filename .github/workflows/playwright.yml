@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright browsers
+      - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
       - name: Run tests on shard ${{ matrix.shard }}
@@ -51,7 +51,7 @@ jobs:
     name: Run Lighthouse Audit
     runs-on: ubuntu-latest
     needs: test
-    continue-on-error: true  # Don't break pipeline if Lighthouse fails
+    continue-on-error: true  # Jangan hentikan pipeline jika Lighthouse gagal
     steps:
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -61,20 +61,34 @@ jobs:
       - name: Install Lighthouse
         run: npm install -g lighthouse
 
+      - name: Create Lighthouse directory
+        run: mkdir -p ./lighthouse
+
       - name: Run Lighthouse audit
         run: |
-          lighthouse https://suprimaaldino.github.io/cdcplaywrightlocator/ \
+          npx lighthouse https://suprimaaldino.github.io/cdcplaywrightlocator/ \
             --output=json,html \
             --output-path=./lighthouse/lighthouse-report \
             --chrome-flags="--headless" \
             --preset=desktop \
             --disable-gatherers=Interactive
 
+      - name: Verify Lighthouse report generated
+        run: |
+          if [ ! -f "./lighthouse/lighthouse-report.html" ]; then
+            echo "⚠️ Lighthouse report failed to generate."
+            exit 1
+          else
+            echo "✅ Lighthouse report generated successfully."
+            ls -la ./lighthouse/
+          fi
+
       - name: Upload Lighthouse report
         uses: actions/upload-artifact@v4
         with:
           name: lighthouse-report
           path: ./lighthouse
+          if-no-files-found: warn
 
 
   merge-allure-reports:
@@ -122,24 +136,27 @@ jobs:
       - name: Generate Allure report
         run: |
           if [ ! -d "./allure-results" ] || [ -z "$(ls -A ./allure-results)" ]; then
-            echo "No test results found. Attempting rollback..."
+            echo "❌ No Allure results found!"
             if [ -d "./allure-report-backup" ]; then
+              echo "🔁 Rolling back to previous report..."
               mv ./allure-report-backup ./allure-report
-              echo "Rolled back to previous report."
               exit 0
             else
-              echo "No backup available. Cannot generate report."
+              echo "🚫 No backup available. Cannot generate report."
               exit 1
             fi
           fi
+          echo "🛠️ Generating Allure report..."
           allure generate ./allure-results --clean -o ./allure-report
 
-      - name: Add Lighthouse report to Allure
+      - name: Embed Lighthouse report into Allure
         run: |
           if [ -f "./lighthouse/lighthouse-report.html" ]; then
             mkdir -p ./allure-report/lighthouse
             cp ./lighthouse/lighthouse-report.html ./allure-report/lighthouse/
-            echo "Lighthouse report embedded."
+            echo "📎 Lighthouse report embedded."
+          else
+            echo "⚠️ Lighthouse report not found, skipping embed."
           fi
 
       - name: Upload Allure report as artifact
@@ -153,7 +170,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report
-          keep_files: false  # Ensures old files are cleared
+          publish_branch: gh-pages
+          keep_files: false    # Hapus file lama → hindari cache
+          force_orphan: false
 
       - name: Notify Telegram of CI completion
         if: always()
@@ -176,15 +195,15 @@ jobs:
 
           🕑 Completed at: $TIMESTAMP
           📊 [View Allure Report]($REPORT_URL)
-          🔍 Lighthouse audit included (see 'lighthouse/' folder in report)
+          🔍 Lighthouse audit included in /lighthouse/
           EOF
-          )
+                    )
 
-          echo "Sending Telegram notification..."
-          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
-            -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
-            -d parse_mode="Markdown" \
-            --data-urlencode "text=$MESSAGE"
+                    echo "Sending Telegram notification..."
+                    curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+                      -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+                      -d parse_mode="Markdown" \
+                      --data-urlencode "text=$MESSAGE"
 
 
   generate-changelog:
