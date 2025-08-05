@@ -10,6 +10,7 @@
 * **ci:** add ligthouse integration to workflow ([7408ec8](https://github.com/suprimaaldino/cdcplaywrightlocator/commit/7408ec86511fdfdedfd42091a7a11449f5bb3e7e))
 * **ci:** add rollback scenario to preserve Allure report on failure ([74a4d64](https://github.com/suprimaaldino/cdcplaywrightlocator/commit/74a4d64d4be5a25a4a2c797725fb361a9eeb3975))
 * **ci:** added lighouse integration in the workflow ([b51fea7](https://github.com/suprimaaldino/cdcplaywrightlocator/commit/b51fea7b77631efabb172932a629996c7f891c1d))
+* **ci:** unified Lighthouse + Allure reporting with enhanced error handling ([99dbf81](https://github.com/suprimaaldino/cdcplaywrightlocator/commit/99dbf81a97666ff8550559d1a643020eb9b293fa))
 
 
 ### Bug Fixes
