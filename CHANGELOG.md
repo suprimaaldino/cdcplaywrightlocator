@@ -15,6 +15,7 @@
 ### Bug Fixes
 
 * **ci:** retrigger pipeline after rollback merge ([0a32257](https://github.com/suprimaaldino/cdcplaywrightlocator/commit/0a3225733030ec430b7cdf05ef4281dadfec8411))
+* **ci:** update workflow  to resolve lighthouse job error ([47b8cdc](https://github.com/suprimaaldino/cdcplaywrightlocator/commit/47b8cdc601a952a3c2886eb3dfe1ffb56ac47076))
 
 
 ### Reverts
