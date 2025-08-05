@@ -86,6 +86,7 @@ jobs:
         run: |
           echo "🔍 Checking site availability..."
           SITE_REACHABLE=false
+          CURRENT_TIME=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
           
           # Check site availability
           for i in {1..3}; do
@@ -144,7 +145,8 @@ jobs:
             ls -la ./lighthouse/
           else
             echo "⚠️ Lighthouse report not found, creating fallback..."
-            cat > ./lighthouse/lighthouse-report.html << 'EOF'
+            TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
+            cat > ./lighthouse/lighthouse-report.html << EOF
           <!DOCTYPE html>
           <html lang="en">
           <head>
@@ -169,6 +171,20 @@ jobs:
                   .warning { color: #f57c00; font-size: 18px; margin-bottom: 20px; }
                   .info { color: #666; line-height: 1.6; }
                   .timestamp { font-size: 12px; color: #999; margin-top: 30px; }
+                  .links { margin-top: 30px; }
+                  .btn {
+                      display: inline-block;
+                      padding: 10px 20px;
+                      margin: 5px;
+                      background: #007AFF;
+                      color: white;
+                      text-decoration: none;
+                      border-radius: 5px;
+                      font-weight: 500;
+                  }
+                  .btn:hover { background: #0056CC; }
+                  .btn-secondary { background: #34C759; }
+                  .btn-secondary:hover { background: #28A745; }
               </style>
           </head>
           <body>
@@ -186,8 +202,12 @@ jobs:
                       </ul>
                       <p>The audit will be retried in the next workflow run.</p>
                   </div>
+                  <div class="links">
+                      <a href="../" class="btn btn-secondary">⬅️ Back to Test Report</a>
+                      <a href="https://github.com/${{ github.repository }}/actions" class="btn" target="_blank">🔄 View Workflow</a>
+                  </div>
                   <div class="timestamp">
-                      Generated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')<br>
+                      Generated: $TIMESTAMP<br>
                       Workflow: ${{ github.workflow }} #${{ github.run_number }}
                   </div>
               </div>
@@ -223,8 +243,10 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Install Allure CLI
-        run: npm install -g allure-commandline@2.24.0
+      - name: Install Allure CLI and tools
+        run: |
+          npm install -g allure-commandline@2.24.0
+          sudo apt-get update && sudo apt-get install -y jq
 
       - name: Clean old results and reports
         run: |
@@ -317,6 +339,52 @@ jobs:
           EOF
           else
             echo "🛠️ Generating Allure report..."
+            
+            # Create Lighthouse attachment if report exists
+            if [ -f "./lighthouse/lighthouse-report.json" ]; then
+              echo "📎 Creating Lighthouse attachment for Allure..."
+              mkdir -p ./allure-results
+              
+              # Extract metrics for Allure
+              if command -v jq &> /dev/null && [ -f "./lighthouse/lighthouse-report.json" ]; then
+                PERFORMANCE=$(jq -r '.categories.performance.score * 100 | floor' "./lighthouse/lighthouse-report.json" 2>/dev/null || echo "0")
+                ACCESSIBILITY=$(jq -r '.categories.accessibility.score * 100 | floor' "./lighthouse/lighthouse-report.json" 2>/dev/null || echo "0")
+                BEST_PRACTICES=$(jq -r '.categories["best-practices"].score * 100 | floor' "./lighthouse/lighthouse-report.json" 2>/dev/null || echo "0")
+                SEO=$(jq -r '.categories.seo.score * 100 | floor' "./lighthouse/lighthouse-report.json" 2>/dev/null || echo "0")
+                
+                # Create a synthetic test result for Lighthouse
+                cat > ./allure-results/lighthouse-metrics.json << EOF
+          {
+            "uuid": "lighthouse-$(uuidgen)",
+            "name": "Lighthouse Performance Audit",
+            "fullName": "Performance.Lighthouse.Audit",
+            "status": "$( [ "$PERFORMANCE" -ge "80" ] && echo "passed" || echo "failed" )",
+            "stage": "finished",
+            "start": $(date +%s)000,
+            "stop": $(date +%s)000,
+            "labels": [
+              {"name": "suite", "value": "Performance Tests"},
+              {"name": "feature", "value": "Lighthouse Audit"},
+              {"name": "story", "value": "Web Performance"}
+            ],
+            "parameters": [
+              {"name": "Performance Score", "value": "$PERFORMANCE%"},
+              {"name": "Accessibility Score", "value": "$ACCESSIBILITY%"}, 
+              {"name": "Best Practices Score", "value": "$BEST_PRACTICES%"},
+              {"name": "SEO Score", "value": "$SEO%"}
+            ],
+            "attachments": [
+              {
+                "name": "Lighthouse Report",
+                "source": "lighthouse-report.html",
+                "type": "text/html"
+              }
+            ]
+          }
+          EOF
+              fi
+            fi
+            
             allure generate ./allure-results --clean -o ./allure-report
             echo "✅ Allure report generated successfully"
           fi
@@ -326,7 +394,117 @@ jobs:
         run: |
           mkdir -p ./allure-report/lighthouse
           cp ./lighthouse/lighthouse-report.* ./allure-report/lighthouse/ 2>/dev/null || true
-          echo "📎 Lighthouse report embedded into Allure report"
+          
+          # Create Allure environment properties for Lighthouse integration
+          cat > ./allure-report/widgets/environment.json << 'EOF'
+          {
+            "Lighthouse Report": "lighthouse/lighthouse-report.html",
+            "Performance Audit": "Available",
+            "Report Type": "Integrated"
+          }
+          EOF
+          
+          # Add Lighthouse as custom widget in Allure
+          mkdir -p ./allure-report/plugins
+          cat > ./allure-report/plugins/lighthouse-plugin.js << 'EOF'
+          window.addEventListener('DOMContentLoaded', function() {
+            // Add Lighthouse button to Allure navigation
+            const sidebar = document.querySelector('.side-nav__brand');
+            if (sidebar) {
+              const lighthouseBtn = document.createElement('a');
+              lighthouseBtn.href = 'lighthouse/lighthouse-report.html';
+              lighthouseBtn.target = '_blank';
+              lighthouseBtn.innerHTML = '⚡ Lighthouse Audit';
+              lighthouseBtn.style.cssText = `
+                display: block;
+                padding: 10px 15px;
+                margin: 10px 0;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: 500;
+                text-align: center;
+                transition: all 0.3s ease;
+              `;
+              lighthouseBtn.onmouseover = () => lighthouseBtn.style.transform = 'scale(1.02)';
+              lighthouseBtn.onmouseout = () => lighthouseBtn.style.transform = 'scale(1)';
+              sidebar.appendChild(lighthouseBtn);
+            }
+          });
+          EOF
+          
+          # Inject the custom JavaScript into Allure's index.html
+          if [ -f "./allure-report/index.html" ]; then
+            sed -i 's|</head>|<script src="plugins/lighthouse-plugin.js"></script></head>|' ./allure-report/index.html
+          fi
+          
+          # Create a custom Lighthouse summary for Allure overview
+          LIGHTHOUSE_JSON="./lighthouse/lighthouse-report.json"
+          if [ -f "$LIGHTHOUSE_JSON" ]; then
+            echo "📊 Extracting Lighthouse metrics..."
+            
+            # Extract key metrics using jq (if available) or fallback
+            if command -v jq &> /dev/null; then
+              PERFORMANCE=$(jq -r '.categories.performance.score * 100 | floor' "$LIGHTHOUSE_JSON" 2>/dev/null || echo "N/A")
+              ACCESSIBILITY=$(jq -r '.categories.accessibility.score * 100 | floor' "$LIGHTHOUSE_JSON" 2>/dev/null || echo "N/A")
+              BEST_PRACTICES=$(jq -r '.categories["best-practices"].score * 100 | floor' "$LIGHTHOUSE_JSON" 2>/dev/null || echo "N/A")
+              SEO=$(jq -r '.categories.seo.score * 100 | floor' "$LIGHTHOUSE_JSON" 2>/dev/null || echo "N/A")
+              FCP=$(jq -r '.audits["first-contentful-paint"].displayValue' "$LIGHTHOUSE_JSON" 2>/dev/null || echo "N/A")
+              LCP=$(jq -r '.audits["largest-contentful-paint"].displayValue' "$LIGHTHOUSE_JSON" 2>/dev/null || echo "N/A")
+            else
+              echo "⚠️ jq not available, using fallback extraction"
+              PERFORMANCE="Check Report"
+              ACCESSIBILITY="Check Report"
+              BEST_PRACTICES="Check Report"
+              SEO="Check Report"
+              FCP="Check Report"
+              LCP="Check Report"
+            fi
+            
+            # Create Lighthouse summary widget
+            cat > ./allure-report/widgets/lighthouse-summary.json << EOF
+          {
+            "uid": "lighthouse-summary",
+            "name": "Lighthouse Audit Summary",
+            "reportName": "lighthouse-summary",
+            "items": [
+              {
+                "name": "Performance",
+                "value": "$PERFORMANCE%",
+                "status": "$( [ "$PERFORMANCE" != "N/A" ] && [ "$PERFORMANCE" -ge "90" ] && echo "passed" || echo "failed" )"
+              },
+              {
+                "name": "Accessibility", 
+                "value": "$ACCESSIBILITY%",
+                "status": "$( [ "$ACCESSIBILITY" != "N/A" ] && [ "$ACCESSIBILITY" -ge "90" ] && echo "passed" || echo "failed" )"
+              },
+              {
+                "name": "Best Practices",
+                "value": "$BEST_PRACTICES%", 
+                "status": "$( [ "$BEST_PRACTICES" != "N/A" ] && [ "$BEST_PRACTICES" -ge "90" ] && echo "passed" || echo "failed" )"
+              },
+              {
+                "name": "SEO",
+                "value": "$SEO%",
+                "status": "$( [ "$SEO" != "N/A" ] && [ "$SEO" -ge "90" ] && echo "passed" || echo "failed" )"
+              },
+              {
+                "name": "First Contentful Paint",
+                "value": "$FCP",
+                "status": "unknown"
+              },
+              {
+                "name": "Largest Contentful Paint", 
+                "value": "$LCP",
+                "status": "unknown"
+              }
+            ]
+          }
+          EOF
+          fi
+          
+          echo "🎯 Lighthouse report fully integrated into Allure"
 
       - name: Create report summary
         run: |
@@ -401,8 +579,11 @@ jobs:
           • Lighthouse: $LIGHTHOUSE_STATUS
           • Completed: $TIMESTAMP
 
-          📊 [📈 View Allure Report]($REPORT_URL)
-          🔍 [🏠 Repository](https://github.com/${{ github.repository }})
+          🔗 **Quick Links:**
+          📈 [Allure Test Report]($REPORT_URL)
+          ⚡ [Lighthouse Audit]($REPORT_URL/lighthouse/lighthouse-report.html)
+          📚 [Repository](https://github.com/${{ github.repository }})
+          🔄 [Workflow Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
           EOF
           )
 
