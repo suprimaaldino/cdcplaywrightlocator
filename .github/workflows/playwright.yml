@@ -1,3 +1,134 @@
+name: Playwright Tests with Allure
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Runs daily at 08:00 UTC
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  test:
+    name: Run Playwright tests with 3 shards
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shard: [1, 2, 3]
+      fail-fast: false
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Run tests on shard ${{ matrix.shard }}
+        run: |
+          npx playwright test --shard=${{ matrix.shard }}/3 \
+            --reporter=dot,line,allure-playwright
+        env:
+          CI: true
+
+      - name: Verify Allure results exist
+        run: |
+          if [ ! -d "./allure-results" ] || [ -z "$(ls -A ./allure-results)" ]; then
+            echo "❌ No Allure results found for shard ${{ matrix.shard }}"
+            exit 1
+          fi
+
+      - name: Upload Allure results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-results-shard-${{ matrix.shard }}
+          path: ./allure-results
+          retention-days: 30
+
+  merge-allure-reports:
+    name: Merge Allure Reports and Deploy
+    runs-on: ubuntu-latest
+    needs: test
+    if: always()
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Allure CLI and tools
+        run: |
+          npm install -g allure-commandline@2.24.0
+          sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Clean old results and reports
+        run: |
+          rm -rf ./allure-results ./allure-report
+          mkdir -p ./allure-results
+
+      - name: Download Allure results from all shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: allure-results-shard-*
+          merge-multiple: true
+          path: ./allure-results
+        continue-on-error: true
+
+      - name: Generate Allure report
+        id: generate_allure
+        run: |
+          if [ ! -d "./allure-results" ] || [ -z "$(find ./allure-results -name '*.json' -type f)" ]; then
+            echo "❌ No test results found. Creating placeholder..."
+            mkdir -p ./allure-report
+            cat > ./allure-report/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html><head><title>No Results</title></head>
+          <body style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px;">
+              <h1 style="color: red;">❌ No test results available</h1>
+              <p>Check workflow logs for details.</p>
+          </body></html>
+          EOF
+            echo "allure_generated=false" >> $GITHUB_OUTPUT
+          else
+            echo "🛠️ Generating Allure report..."
+            allure generate ./allure-results --clean -o ./allure-report
+            echo "allure_generated=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Upload Allure report as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: ./allure-report
+          retention-days: 90
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
+          publish_branch: gh-pages
+          keep_files: false
+          commit_message: 'Deploy Allure report - ${{ github.sha }}'
+
       - name: Notify Telegram of CI completion
         if: always()
         env:
@@ -9,7 +140,6 @@
         run: |
           echo "🔄 Preparing Telegram notification..."
 
-          # Ambil status jobs
           TEST_STATUS="${{ needs.test.result }}"
           DEPLOY_STATUS="${{ job.status }}"
 
@@ -30,7 +160,7 @@
             DEPLOY_ICON="⚠️"
           fi
 
-          # Status pipeline keseluruhan
+          # Overall pipeline status
           if [ "$TEST_STATUS" == "success" ] && [ "$DEPLOY_STATUS" == "success" ]; then
             EMOJI="🎉"
             STATUS="Pipeline Passed"
@@ -48,6 +178,7 @@
           SHORT_SHA="${GITHUB_SHA:0:7}"
           TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
           REPORT_URL="https://suprimaaldino.github.io/cdcplaywrightlocator/"
+          WORKFLOW_URL="https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
 
           MESSAGE="$EMOJI *$STATUS*
           ━━━━━━━━━━━━━
@@ -56,11 +187,10 @@
           🕒 $TIMESTAMP
           🔖 \`$SHORT_SHA\`
           ━━━━━━━━━━━━━
-          📈 [Test Report]($REPORT_URL)
-          ⚡ [Lighthouse Audit]($REPORT_URL/lighthouse/lighthouse-report.html)
-          🔄 [Workflow Run](https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)"
+          📈 [View Test Report]($REPORT_URL)
+          🔄 [Workflow Run]($WORKFLOW_URL)"
 
-          echo "📤 Sending message..."
+          echo "📤 Sending Telegram notification..."
           echo "$MESSAGE"
 
           RESPONSE=$(curl -s -X POST \
@@ -79,3 +209,74 @@
             echo "❌ Failed to send Telegram notification"
             echo "Response: $RESPONSE"
           fi
+
+  generate-changelog:
+    name: Generate Changelog
+    runs-on: ubuntu-latest
+    needs: merge-allure-reports
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate changelog
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          output-file: CHANGELOG.md
+          skip-version-file: true
+          skip-commit: true
+          skip-tag: true
+          preset: 'conventionalcommits'
+
+      - name: Check if changelog was updated
+        id: check_changes
+        run: |
+          if git diff --quiet CHANGELOG.md; then
+            echo "updated=false" >> $GITHUB_OUTPUT
+          else
+            echo "updated=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit updated changelog
+        if: steps.check_changes.outputs.updated == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md
+          git commit -m "docs: update changelog [skip ci]"
+          git push
+
+      - name: Notify Telegram - Changelog Updated
+        if: steps.check_changes.outputs.updated == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            exit 0
+          fi
+
+          MESSAGE="📝 *Changelog Updated*
+          ━━━━━━━━━━━━━
+          🔖 Commit: \`${ GITHUB_SHA:0:7 }\`
+          🕒 $(date -u '+%Y-%m-%d %H:%M UTC')
+          📄 [View Changelog](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md)"
+
+                    curl -s -X POST \
+                      "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+                      -H "Content-Type: application/json" \
+                      -d "{
+                        \"chat_id\": \"$TELEGRAM_CHAT_ID\",
+                        \"text\": $(echo \"$MESSAGE\" | jq -R -s '.'),
+                        \"parse_mode\": \"Markdown\"
+                      }"
