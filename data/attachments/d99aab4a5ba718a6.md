@@ -1,0 +1,70 @@
+# Page snapshot
+
+```yaml
+- link "Fork me on GitHub":
+  - /url: https://github.com/tourdedave/the-internet
+  - img "Fork me on GitHub"
+- heading "File Downloader" [level=3]
+- link "random_data.txt":
+  - /url: download/random_data.txt
+- link "test_file.txt":
+  - /url: download/test_file.txt
+- link "captured_img.png":
+  - /url: download/captured_img.png
+- link "sample.txt":
+  - /url: download/sample.txt
+- link "test.txt":
+  - /url: download/test.txt
+- link "large_file.pdf":
+  - /url: download/large_file.pdf
+- link "3.png":
+  - /url: download/3.png
+- link "invalid_file.txt":
+  - /url: download/invalid_file.txt
+- link "done swap.PNG":
+  - /url: download/done swap.PNG
+- link "Edited_hariss_056.docx":
+  - /url: download/Edited_hariss_056.docx
+- link "c8e2dd9c-2592-0b07-874c-08a526ab778d.jpg":
+  - /url: download/c8e2dd9c-2592-0b07-874c-08a526ab778d.jpg
+- link "test-upload-1773217995508-1.txt":
+  - /url: download/test-upload-1773217995508-1.txt
+- link "sampleFile.txt":
+  - /url: download/sampleFile.txt
+- link "58da802f-c8a3-01ba-ad12-ffe56adfd8f4.jpg":
+  - /url: download/58da802f-c8a3-01ba-ad12-ffe56adfd8f4.jpg
+- link "Exercise 5.docx":
+  - /url: download/Exercise 5.docx
+- link "Screenshot 2025-12-25 172546 - Copy.png":
+  - /url: download/Screenshot 2025-12-25 172546 - Copy.png
+- link "some-file.txt":
+  - /url: download/some-file.txt
+- link "upload.png":
+  - /url: download/upload.png
+- link "Exercise 5.docx.pdf":
+  - /url: download/Exercise 5.docx.pdf
+- link "Trading_in_the_Zone.pdf":
+  - /url: download/Trading_in_the_Zone.pdf
+- link "arrays.php":
+  - /url: download/arrays.php
+- link "archivo-prueba.txt":
+  - /url: download/archivo-prueba.txt
+- link "March 2026_1773103471621.pdf":
+  - /url: download/March 2026_1773103471621.pdf
+- link "scaled_1000064266.jpg":
+  - /url: download/scaled_1000064266.jpg
+- link "EXPERIMENT 4.docx":
+  - /url: download/EXPERIMENT 4.docx
+- link "zycus offer.txt":
+  - /url: download/zycus offer.txt
+- link "newFile.txt":
+  - /url: download/newFile.txt
+- link "test_upload.txt":
+  - /url: download/test_upload.txt
+- link "SQE LAB1 162 (1).docx":
+  - /url: download/SQE LAB1 162 (1).docx
+- separator
+- text: Powered by
+- link "Elemental Selenium":
+  - /url: http://elementalselenium.com/
+```
