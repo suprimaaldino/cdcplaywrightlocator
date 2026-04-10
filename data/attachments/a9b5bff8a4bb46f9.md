@@ -1,0 +1,44 @@
+# Page snapshot
+
+```yaml
+- link "Fork me on GitHub":
+  - /url: https://github.com/tourdedave/the-internet
+  - img "Fork me on GitHub"
+- heading "File Downloader" [level=3]
+- link "special!@#file.txt":
+  - /url: download/special!@#file.txt
+- link "test_upload.txt":
+  - /url: download/test_upload.txt
+- link "test_document.txt":
+  - /url: download/test_document.txt
+- link "sample.pdf":
+  - /url: download/sample.pdf
+- link "Doc1.docx":
+  - /url: download/Doc1.docx
+- link "file.json":
+  - /url: download/file.json
+- link "chromedriver.exe":
+  - /url: download/chromedriver.exe
+- link "ecommerce.json":
+  - /url: download/ecommerce.json
+- link "image_sample.png":
+  - /url: download/image_sample.png
+- link "sampleFile.txt":
+  - /url: download/sampleFile.txt
+- link "test_image.png":
+  - /url: download/test_image.png
+- link "apiresponse.csv":
+  - /url: download/apiresponse.csv
+- link "test_upload_file.txt":
+  - /url: download/test_upload_file.txt
+- link "some-file.txt":
+  - /url: download/some-file.txt
+- link "testfile.txt":
+  - /url: download/testfile.txt
+- link "random_data.txt":
+  - /url: download/random_data.txt
+- separator
+- text: Powered by
+- link "Elemental Selenium":
+  - /url: http://elementalselenium.com/
+```
