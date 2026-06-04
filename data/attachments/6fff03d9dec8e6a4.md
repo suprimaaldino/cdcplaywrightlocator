@@ -1,0 +1,112 @@
+# Page snapshot
+
+```yaml
+- link "Fork me on GitHub":
+  - /url: https://github.com/tourdedave/the-internet
+  - img "Fork me on GitHub"
+- heading "File Downloader" [level=3]
+- link "testimage.png":
+  - /url: download/testimage.png
+- link "playwright-upload713409723917193777.txt":
+  - /url: download/playwright-upload713409723917193777.txt
+- link "E5108D2C-11EC-49C0-9F7A-8CFF584AC3CB.png":
+  - /url: download/E5108D2C-11EC-49C0-9F7A-8CFF584AC3CB.png
+- link "upload_sample.txt":
+  - /url: download/upload_sample.txt
+- link "sample3.pdf":
+  - /url: download/sample3.pdf
+- link "rf_upload_7ya1v2bu.txt":
+  - /url: download/rf_upload_7ya1v2bu.txt
+- link "playwright-upload5012879804348024098.txt":
+  - /url: download/playwright-upload5012879804348024098.txt
+- link "Balazs Nagy QA CV.pdf":
+  - /url: download/Balazs Nagy QA CV.pdf
+- link "playwright-upload7941133894502214517.txt":
+  - /url: download/playwright-upload7941133894502214517.txt
+- link "sample_upload.txt":
+  - /url: download/sample_upload.txt
+- link "testfile.txt":
+  - /url: download/testfile.txt
+- link "some-file.txt":
+  - /url: download/some-file.txt
+- link "Image.gif":
+  - /url: download/Image.gif
+- link "my_test_file.txt":
+  - /url: download/my_test_file.txt
+- link "rf_upload_nhulns90.txt":
+  - /url: download/rf_upload_nhulns90.txt
+- link "upload.txt":
+  - /url: download/upload.txt
+- link "SHIVUKUMAR_CV.pdf":
+  - /url: download/SHIVUKUMAR_CV.pdf
+- link "codex-upload-test.txt":
+  - /url: download/codex-upload-test.txt
+- link "tmpzxz1s5k6.txt":
+  - /url: download/tmpzxz1s5k6.txt
+- link "Vishwa_Resume.pdf":
+  - /url: download/Vishwa_Resume.pdf
+- link "Grade_9_Textbook_Links_2026-27_NEW.pdf":
+  - /url: download/Grade_9_Textbook_Links_2026-27_NEW.pdf
+- link "test_upload_file.txt":
+  - /url: download/test_upload_file.txt
+- link "sample-upload.txt":
+  - /url: download/sample-upload.txt
+- link "Detection (gmbpl).exe":
+  - /url: download/Detection (gmbpl).exe
+- link "th.webp":
+  - /url: download/th.webp
+- link "TP FORMAS DE GOBIERNO.pdf":
+  - /url: download/TP FORMAS DE GOBIERNO.pdf
+- link "tmpceb3919h.txt":
+  - /url: download/tmpceb3919h.txt
+- link "note.txt":
+  - /url: download/note.txt
+- link "interactions.spec.ts":
+  - /url: download/interactions.spec.ts
+- link "rosco-revolucionario. acto 25 de mayo.html":
+  - /url: download/rosco-revolucionario. acto 25 de mayo.html
+- link "file.json":
+  - /url: download/file.json
+- link "Upload Jmeter Test File.jpg":
+  - /url: download/Upload Jmeter Test File.jpg
+- link "playwright-upload330681801141945418.txt":
+  - /url: download/playwright-upload330681801141945418.txt
+- link "megadyneBladeHero.jpg":
+  - /url: download/megadyneBladeHero.jpg
+- link "dummy.txt":
+  - /url: download/dummy.txt
+- link "tmpbp6rci0i.txt":
+  - /url: download/tmpbp6rci0i.txt
+- link "LAPOINT-Med-Metrix-Director-Denial-Transformation-2026-06-02.pdf":
+  - /url: download/LAPOINT-Med-Metrix-Director-Denial-Transformation-2026-06-02.pdf
+- link "zero_bytes_file.txt":
+  - /url: download/zero_bytes_file.txt
+- link "test_img.jpeg":
+  - /url: download/test_img.jpeg
+- link "playwright-upload5194181101865677672.txt":
+  - /url: download/playwright-upload5194181101865677672.txt
+- link "text.txt.txt":
+  - /url: download/text.txt.txt
+- link "JS_Playwright_Interview_Notes.docx":
+  - /url: download/JS_Playwright_Interview_Notes.docx
+- link "rf_upload_ushfo_wx.txt":
+  - /url: download/rf_upload_ushfo_wx.txt
+- link "sample_media_file.png":
+  - /url: download/sample_media_file.png
+- link "playwright-upload7614028746461728218.txt":
+  - /url: download/playwright-upload7614028746461728218.txt
+- link "Jpeg_with_exif.jpeg":
+  - /url: download/Jpeg_with_exif.jpeg
+- link "test.txt":
+  - /url: download/test.txt
+- link "file1.txt":
+  - /url: download/file1.txt
+- link "random_data.txt":
+  - /url: download/random_data.txt
+- link "sample.txt":
+  - /url: download/sample.txt
+- separator
+- text: Powered by
+- link "Elemental Selenium":
+  - /url: http://elementalselenium.com/
+```
