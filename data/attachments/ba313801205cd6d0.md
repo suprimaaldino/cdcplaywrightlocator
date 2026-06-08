@@ -1,0 +1,126 @@
+# Page snapshot
+
+```yaml
+- link "Fork me on GitHub":
+  - /url: https://github.com/tourdedave/the-internet
+  - img "Fork me on GitHub"
+- heading "File Downloader" [level=3]
+- link "sample_media_file.png":
+  - /url: download/sample_media_file.png
+- link "sample-upload.txt":
+  - /url: download/sample-upload.txt
+- link "random_data.txt":
+  - /url: download/random_data.txt
+- link "rf_upload_7xtpb9o3.txt":
+  - /url: download/rf_upload_7xtpb9o3.txt
+- link "file.txt":
+  - /url: download/file.txt
+- link "tmpqrj5ughh.txt":
+  - /url: download/tmpqrj5ughh.txt
+- link "random_data (1).txt":
+  - /url: download/random_data (1).txt
+- link "archivo-prueba.txt":
+  - /url: download/archivo-prueba.txt
+- link "megadyneBladeHero.jpg":
+  - /url: download/megadyneBladeHero.jpg
+- link "tmpah3eflb1.txt":
+  - /url: download/tmpah3eflb1.txt
+- link "autotest-upload-1780917603412.txt":
+  - /url: download/autotest-upload-1780917603412.txt
+- link "webdriverIO.png":
+  - /url: download/webdriverIO.png
+- link "responseBodyMockExample.json":
+  - /url: download/responseBodyMockExample.json
+- link "sample.txt":
+  - /url: download/sample.txt
+- link "tmpx7kpvt4f.txt":
+  - /url: download/tmpx7kpvt4f.txt
+- link "QA HR Interview Questions.pdf":
+  - /url: download/QA HR Interview Questions.pdf
+- link "rf_upload_ofjkax1z.txt":
+  - /url: download/rf_upload_ofjkax1z.txt
+- link "upload_sample.txt":
+  - /url: download/upload_sample.txt
+- link "test_upload.txt":
+  - /url: download/test_upload.txt
+- link "TestData.xlsx":
+  - /url: download/TestData.xlsx
+- link "file.json":
+  - /url: download/file.json
+- link "Excel.xlsx":
+  - /url: download/Excel.xlsx
+- link "tmp24m_p959.txt":
+  - /url: download/tmp24m_p959.txt
+- link "sample_upload.txt":
+  - /url: download/sample_upload.txt
+- link "ABC_File.txt":
+  - /url: download/ABC_File.txt
+- link "testDatareadDatafromexcel.xlsx":
+  - /url: download/testDatareadDatafromexcel.xlsx
+- link "tmprd70gozy.txt":
+  - /url: download/tmprd70gozy.txt
+- link "tmpe6eh59or.txt":
+  - /url: download/tmpe6eh59or.txt
+- link "Image.PNG":
+  - /url: download/Image.PNG
+- link "some-file.txt":
+  - /url: download/some-file.txt
+- link "autotest-upload-1780917842862.txt":
+  - /url: download/autotest-upload-1780917842862.txt
+- link "1.PNG":
+  - /url: download/1.PNG
+- link "tmpl4vo0u5c.txt":
+  - /url: download/tmpl4vo0u5c.txt
+- link "myTest.txt":
+  - /url: download/myTest.txt
+- link "testfile.txt":
+  - /url: download/testfile.txt
+- link "test.txt":
+  - /url: download/test.txt
+- link "tmply1bpbcm.txt":
+  - /url: download/tmply1bpbcm.txt
+- link "large-file.txt":
+  - /url: download/large-file.txt
+- link "1.png":
+  - /url: download/1.png
+- link "test_file.txt":
+  - /url: download/test_file.txt
+- link "screenshot.png":
+  - /url: download/screenshot.png
+- link "puppy_and_kitten.jpg":
+  - /url: download/puppy_and_kitten.jpg
+- link "rbi_test_upload.txt":
+  - /url: download/rbi_test_upload.txt
+- link "Udemy - 3.pdf":
+  - /url: download/Udemy - 3.pdf
+- link "TextDoc.txt":
+  - /url: download/TextDoc.txt
+- link "How a web application works step.docx":
+  - /url: download/How a web application works step.docx
+- link "tmptmfnotdh.txt":
+  - /url: download/tmptmfnotdh.txt
+- link "test_upload_file.txt":
+  - /url: download/test_upload_file.txt
+- link "image.png":
+  - /url: download/image.png
+- link "Blank.docx":
+  - /url: download/Blank.docx
+- link "tmpakjqyzsx.txt":
+  - /url: download/tmpakjqyzsx.txt
+- link "ANK01734.JPG":
+  - /url: download/ANK01734.JPG
+- link "screens wb.docx":
+  - /url: download/screens wb.docx
+- link "_upload_test.txt":
+  - /url: download/_upload_test.txt
+- link "tmph1qry_uz.txt":
+  - /url: download/tmph1qry_uz.txt
+- link "test-file.txt":
+  - /url: download/test-file.txt
+- link "rf_upload_oh6kcpnd.txt":
+  - /url: download/rf_upload_oh6kcpnd.txt
+- separator
+- text: Powered by
+- link "Elemental Selenium":
+  - /url: http://elementalselenium.com/
+```
