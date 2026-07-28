@@ -1,0 +1,148 @@
+# Page snapshot
+
+```yaml
+- link "Fork me on GitHub":
+  - /url: https://github.com/tourdedave/the-internet
+  - img "Fork me on GitHub"
+- heading "Welcome to the-internet" [level=1]
+- heading "Available Examples" [level=2]
+- list:
+  - listitem:
+    - link "A/B Testing":
+      - /url: /abtest
+  - listitem:
+    - link "Add/Remove Elements":
+      - /url: /add_remove_elements/
+  - listitem:
+    - link "Basic Auth":
+      - /url: /basic_auth
+    - text: "(user and pass: admin)"
+  - listitem:
+    - link "Broken Images":
+      - /url: /broken_images
+  - listitem:
+    - link "Challenging DOM":
+      - /url: /challenging_dom
+  - listitem:
+    - link "Checkboxes":
+      - /url: /checkboxes
+  - listitem:
+    - link "Context Menu":
+      - /url: /context_menu
+  - listitem:
+    - link "Digest Authentication":
+      - /url: /digest_auth
+    - text: "(user and pass: admin)"
+  - listitem:
+    - link "Disappearing Elements":
+      - /url: /disappearing_elements
+  - listitem:
+    - link "Drag and Drop":
+      - /url: /drag_and_drop
+  - listitem:
+    - link "Dropdown":
+      - /url: /dropdown
+  - listitem:
+    - link "Dynamic Content":
+      - /url: /dynamic_content
+  - listitem:
+    - link "Dynamic Controls":
+      - /url: /dynamic_controls
+  - listitem:
+    - link "Dynamic Loading":
+      - /url: /dynamic_loading
+  - listitem:
+    - link "Entry Ad":
+      - /url: /entry_ad
+  - listitem:
+    - link "Exit Intent":
+      - /url: /exit_intent
+  - listitem:
+    - link "File Download":
+      - /url: /download
+  - listitem:
+    - link "File Upload":
+      - /url: /upload
+  - listitem:
+    - link "Floating Menu":
+      - /url: /floating_menu
+  - listitem:
+    - link "Forgot Password":
+      - /url: /forgot_password
+  - listitem:
+    - link "Form Authentication":
+      - /url: /login
+  - listitem:
+    - link "Frames":
+      - /url: /frames
+  - listitem:
+    - link "Geolocation":
+      - /url: /geolocation
+  - listitem:
+    - link "Horizontal Slider":
+      - /url: /horizontal_slider
+  - listitem:
+    - link "Hovers":
+      - /url: /hovers
+  - listitem:
+    - link "Infinite Scroll":
+      - /url: /infinite_scroll
+  - listitem:
+    - link "Inputs":
+      - /url: /inputs
+  - listitem:
+    - link "JQuery UI Menus":
+      - /url: /jqueryui/menu
+  - listitem:
+    - link "JavaScript Alerts":
+      - /url: /javascript_alerts
+  - listitem:
+    - link "JavaScript onload event error":
+      - /url: /javascript_error
+  - listitem:
+    - link "Key Presses":
+      - /url: /key_presses
+  - listitem:
+    - link "Large & Deep DOM":
+      - /url: /large
+  - listitem:
+    - link "Multiple Windows":
+      - /url: /windows
+  - listitem:
+    - link "Nested Frames":
+      - /url: /nested_frames
+  - listitem:
+    - link "Notification Messages":
+      - /url: /notification_message
+  - listitem:
+    - link "Redirect Link":
+      - /url: /redirector
+  - listitem:
+    - link "Secure File Download":
+      - /url: /download_secure
+  - listitem:
+    - link "Shadow DOM":
+      - /url: /shadowdom
+  - listitem:
+    - link "Shifting Content":
+      - /url: /shifting_content
+  - listitem:
+    - link "Slow Resources":
+      - /url: /slow
+  - listitem:
+    - link "Sortable Data Tables":
+      - /url: /tables
+  - listitem:
+    - link "Status Codes":
+      - /url: /status_codes
+  - listitem:
+    - link "Typos":
+      - /url: /typos
+  - listitem:
+    - link "WYSIWYG Editor":
+      - /url: /tinymce
+- separator
+- text: Powered by
+- link "Elemental Selenium":
+  - /url: http://elementalselenium.com/
+```
