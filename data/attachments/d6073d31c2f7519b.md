@@ -1,0 +1,142 @@
+# Page snapshot
+
+```yaml
+- link "Fork me on GitHub":
+  - /url: https://github.com/tourdedave/the-internet
+  - img "Fork me on GitHub"
+- heading "File Downloader" [level=3]
+- link "sample1.txt":
+  - /url: download/sample1.txt
+- link "2026, 03_29_22 PM.png":
+  - /url: download/2026, 03_29_22 PM.png
+- link "requirements.txt":
+  - /url: download/requirements.txt
+- link "image2.jpg":
+  - /url: download/image2.jpg
+- link "popup.pdf":
+  - /url: download/popup.pdf
+- link "r2_test_upload_seig4v7b.txt":
+  - /url: download/r2_test_upload_seig4v7b.txt
+- link "rf_upload_v8irv3xe.txt":
+  - /url: download/rf_upload_v8irv3xe.txt
+- link "test_file.txt":
+  - /url: download/test_file.txt
+- link "santhosh_generated_resume.pdf":
+  - /url: download/santhosh_generated_resume.pdf
+- link "Bug.mp4":
+  - /url: download/Bug.mp4
+- link "git-cheatsheet.pdf":
+  - /url: download/git-cheatsheet.pdf
+- link "CertificateOfCompletion.pdf":
+  - /url: download/CertificateOfCompletion.pdf
+- link "rf_upload_r0ag93zh.txt":
+  - /url: download/rf_upload_r0ag93zh.txt
+- link "tmppgee0f59.txt":
+  - /url: download/tmppgee0f59.txt
+- link "rf_upload_3dt_nrq8.txt":
+  - /url: download/rf_upload_3dt_nrq8.txt
+- link "curis-browser-demo-upload.txt":
+  - /url: download/curis-browser-demo-upload.txt
+- link "upload.pdf":
+  - /url: download/upload.pdf
+- link "download.htm":
+  - /url: download/download.htm
+- link "testUpload.json":
+  - /url: download/testUpload.json
+- link "breakfast.jpg":
+  - /url: download/breakfast.jpg
+- link "hello.txt":
+  - /url: download/hello.txt
+- link "sample.txt":
+  - /url: download/sample.txt
+- link "test-file.txt":
+  - /url: download/test-file.txt
+- link "Resume.pdf":
+  - /url: download/Resume.pdf
+- link "random_data.txt":
+  - /url: download/random_data.txt
+- link "playwright.pdf":
+  - /url: download/playwright.pdf
+- link "hello.json":
+  - /url: download/hello.json
+- link "tmp5et1978t.txt":
+  - /url: download/tmp5et1978t.txt
+- link "test.txt":
+  - /url: download/test.txt
+- link "OSL-Lab1-Shell Scripting-Write up.docx.pdf":
+  - /url: download/OSL-Lab1-Shell Scripting-Write up.docx.pdf
+- link "tmpg_rqnilw.txt":
+  - /url: download/tmpg_rqnilw.txt
+- link "archivo-prueba.txt":
+  - /url: download/archivo-prueba.txt
+- link "Learning Playwright with Python.docx":
+  - /url: download/Learning Playwright with Python.docx
+- link "Screenshot 2026-07-16 124216.png":
+  - /url: download/Screenshot 2026-07-16 124216.png
+- link "pdf-1mb.pdf":
+  - /url: download/pdf-1mb.pdf
+- link "Images.txt":
+  - /url: download/Images.txt
+- link "gauntlet.txt":
+  - /url: download/gauntlet.txt
+- link "Actions.pdf":
+  - /url: download/Actions.pdf
+- link "some-file.txt":
+  - /url: download/some-file.txt
+- link "upload.spec.ts":
+  - /url: download/upload.spec.ts
+- link "tmp0xd36td1.txt":
+  - /url: download/tmp0xd36td1.txt
+- link "Screenshot.png":
+  - /url: download/Screenshot.png
+- link "r2_test_upload_24tukqvp.txt":
+  - /url: download/r2_test_upload_24tukqvp.txt
+- link "krytyk-upload.txt":
+  - /url: download/krytyk-upload.txt
+- link "matric1122.pdf":
+  - /url: download/matric1122.pdf
+- link "r2_test_upload_5dm5nt9w.txt":
+  - /url: download/r2_test_upload_5dm5nt9w.txt
+- link "r2_test_upload_7ovs7ap4.txt":
+  - /url: download/r2_test_upload_7ovs7ap4.txt
+- link "260627MH00054718 (1).pdf":
+  - /url: download/260627MH00054718 (1).pdf
+- link "Screenshot1.png":
+  - /url: download/Screenshot1.png
+- link "r2_test_upload_t6wudme_.txt":
+  - /url: download/r2_test_upload_t6wudme_.txt
+- link "tmpbhb5p5ep.txt":
+  - /url: download/tmpbhb5p5ep.txt
+- link "cdp_upload_probe.txt":
+  - /url: download/cdp_upload_probe.txt
+- link "tmpeg3e02hw.txt":
+  - /url: download/tmpeg3e02hw.txt
+- link "sampleData.txt":
+  - /url: download/sampleData.txt
+- link "sample-upload.png":
+  - /url: download/sample-upload.png
+- link "Screenshot (8).png":
+  - /url: download/Screenshot (8).png
+- link "sample_upload.txt":
+  - /url: download/sample_upload.txt
+- link "Obsqura Testing.xlsx":
+  - /url: download/Obsqura Testing.xlsx
+- link "test_upload.txt":
+  - /url: download/test_upload.txt
+- link "testFile.txt":
+  - /url: download/testFile.txt
+- link "Test.txt":
+  - /url: download/Test.txt
+- link "inv_1531155.pdf":
+  - /url: download/inv_1531155.pdf
+- link "r2_test_upload_ig6iq8b9.txt":
+  - /url: download/r2_test_upload_ig6iq8b9.txt
+- link "test_upload_file.txt":
+  - /url: download/test_upload_file.txt
+- link "Sample.txt":
+  - /url: download/Sample.txt
+- separator
+- text: Powered by
+- link "Elemental Selenium":
+  - /url: http://elementalselenium.com/
+```
