@@ -1,0 +1,106 @@
+# Page snapshot
+
+```yaml
+- link "Fork me on GitHub":
+  - /url: https://github.com/tourdedave/the-internet
+  - img "Fork me on GitHub"
+- heading "File Downloader" [level=3]
+- link "color.png":
+  - /url: download/color.png
+- link "test-upload.txt":
+  - /url: download/test-upload.txt
+- link "test.txt":
+  - /url: download/test.txt
+- link "Date Validitioni.PNG":
+  - /url: download/Date Validitioni.PNG
+- link "browser-use-test.txt":
+  - /url: download/browser-use-test.txt
+- link "upload-test.txt":
+  - /url: download/upload-test.txt
+- link "l.txt":
+  - /url: download/l.txt
+- link "archivo-de-prueba.txt":
+  - /url: download/archivo-de-prueba.txt
+- link "a.txt":
+  - /url: download/a.txt
+- link "sample.txt":
+  - /url: download/sample.txt
+- link "upload-7587768054515028560.txt":
+  - /url: download/upload-7587768054515028560.txt
+- link "testfile.txt":
+  - /url: download/testfile.txt
+- link "ESB.jpeg":
+  - /url: download/ESB.jpeg
+- link "trac_msi.log":
+  - /url: download/trac_msi.log
+- link "upload.png":
+  - /url: download/upload.png
+- link "a073880b-59fe-4c6a-8768-c92d9c4e0c83.txt":
+  - /url: download/a073880b-59fe-4c6a-8768-c92d9c4e0c83.txt
+- link "rf_upload_jyvm52zm.txt":
+  - /url: download/rf_upload_jyvm52zm.txt
+- link "ABSTRACT PAGE.docx":
+  - /url: download/ABSTRACT PAGE.docx
+- link "AUTO_RECEIPT_RD17847198172619964.pdf":
+  - /url: download/AUTO_RECEIPT_RD17847198172619964.pdf
+- link "sample-upload.txt":
+  - /url: download/sample-upload.txt
+- link "random_data.txt":
+  - /url: download/random_data.txt
+- link "VModel.jpg":
+  - /url: download/VModel.jpg
+- link "Swetha R Resume.pdf":
+  - /url: download/Swetha R Resume.pdf
+- link "497e31c6-259b-46f1-b1ea-7a93b10eea3f.txt":
+  - /url: download/497e31c6-259b-46f1-b1ea-7a93b10eea3f.txt
+- link "samplefile.pdf":
+  - /url: download/samplefile.pdf
+- link "testUpload.json":
+  - /url: download/testUpload.json
+- link "8888.json":
+  - /url: download/8888.json
+- link "some-file.txt":
+  - /url: download/some-file.txt
+- link "random_data_18.txt":
+  - /url: download/random_data_18.txt
+- link "Fee Receipt.pdf":
+  - /url: download/Fee Receipt.pdf
+- link "wm-webaction-c1bcd99a-7c49-49c4-b44b-50dbc62ad242-wm-fixture.txt":
+  - /url: download/wm-webaction-c1bcd99a-7c49-49c4-b44b-50dbc62ad242-wm-fixture.txt
+- link "Akhil_FutureSkills_Prime_Competency_Diagnostic_Assessment.pdf":
+  - /url: download/Akhil_FutureSkills_Prime_Competency_Diagnostic_Assessment.pdf
+- link "pdf-1mb.pdf":
+  - /url: download/pdf-1mb.pdf
+- link "ChatGPT Image May 8, 2026, 10_49_35 AM.png":
+  - /url: download/ChatGPT Image May 8, 2026, 10_49_35 AM.png
+- link "upload-8792397708108717636.txt":
+  - /url: download/upload-8792397708108717636.txt
+- link "rf_upload_7w3jn9q8.txt":
+  - /url: download/rf_upload_7w3jn9q8.txt
+- link "demo.png":
+  - /url: download/demo.png
+- link "upload-17941819518543042381.txt":
+  - /url: download/upload-17941819518543042381.txt
+- link "test_upload_file.txt":
+  - /url: download/test_upload_file.txt
+- link "test_upload.txt":
+  - /url: download/test_upload.txt
+- link "selenium-snapshot.png":
+  - /url: download/selenium-snapshot.png
+- link "rf_upload_wjlziw0g.txt":
+  - /url: download/rf_upload_wjlziw0g.txt
+- link "ornek.txt":
+  - /url: download/ornek.txt
+- link "6a93e278-c5c0-4807-bc38-f17b81a22618.txt":
+  - /url: download/6a93e278-c5c0-4807-bc38-f17b81a22618.txt
+- link "Images.txt":
+  - /url: download/Images.txt
+- link "users.csv":
+  - /url: download/users.csv
+- link "Copy issue.png":
+  - /url: download/Copy issue.png
+- separator
+- text: Powered by
+- link "Elemental Selenium":
+  - /url: http://elementalselenium.com/
+```
