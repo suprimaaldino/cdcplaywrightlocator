@@ -1,0 +1,154 @@
+# Page snapshot
+
+```yaml
+- link "Fork me on GitHub":
+  - /url: https://github.com/tourdedave/the-internet
+  - img "Fork me on GitHub"
+- heading "File Downloader" [level=3]
+- link "image2.png":
+  - /url: download/image2.png
+- link "test_upload_file.txt":
+  - /url: download/test_upload_file.txt
+- link "checkup-1786770421-7dlp.txt":
+  - /url: download/checkup-1786770421-7dlp.txt
+- link "upload-test-1786780386517581000.txt":
+  - /url: download/upload-test-1786780386517581000.txt
+- link "upload-test-1786779738432899000.txt":
+  - /url: download/upload-test-1786779738432899000.txt
+- link "some-file.txt":
+  - /url: download/some-file.txt
+- link "upload-test-1786779514864511000.txt":
+  - /url: download/upload-test-1786779514864511000.txt
+- link "upload-test-639223743540345250.txt":
+  - /url: download/upload-test-639223743540345250.txt
+- link "testUpload.json":
+  - /url: download/testUpload.json
+- link "tmp_guw3r9q.txt":
+  - /url: download/tmp_guw3r9q.txt
+- link "78b04e4b-c666-4c21-bb6a-c20f2f35e687.txt":
+  - /url: download/78b04e4b-c666-4c21-bb6a-c20f2f35e687.txt
+- link "test-upload.txt":
+  - /url: download/test-upload.txt
+- link "d16d4141-9323-4891-903f-01e2ab923740.txt":
+  - /url: download/d16d4141-9323-4891-903f-01e2ab923740.txt
+- link "auth.json":
+  - /url: download/auth.json
+- link "tmp3g8zl_c1.txt":
+  - /url: download/tmp3g8zl_c1.txt
+- link "tmp5r7jcl3c.txt":
+  - /url: download/tmp5r7jcl3c.txt
+- link "hello.json":
+  - /url: download/hello.json
+- link "sign .jpg":
+  - /url: download/sign .jpg
+- link "Images.txt":
+  - /url: download/Images.txt
+- link "Screenshot 2026-03-23 134102.png":
+  - /url: download/Screenshot 2026-03-23 134102.png
+- link "tmpm_dgzek2.txt":
+  - /url: download/tmpm_dgzek2.txt
+- link "7203.jpg":
+  - /url: download/7203.jpg
+- link "upload-test-1786779807637157000.txt":
+  - /url: download/upload-test-1786779807637157000.txt
+- link "tmpuxnw_dtp.txt":
+  - /url: download/tmpuxnw_dtp.txt
+- link "tmpa1j_kk_p.txt":
+  - /url: download/tmpa1j_kk_p.txt
+- link "tmpz1wq0ix5.txt":
+  - /url: download/tmpz1wq0ix5.txt
+- link "AccentureApplication.txt":
+  - /url: download/AccentureApplication.txt
+- link "88efd1e7-22ce-47eb-b0ea-2a12c171c133.txt":
+  - /url: download/88efd1e7-22ce-47eb-b0ea-2a12c171c133.txt
+- link "2c03566a-6448-48aa-8c84-d6995a3db326.txt":
+  - /url: download/2c03566a-6448-48aa-8c84-d6995a3db326.txt
+- link "upload-test-1786779883640047000.txt":
+  - /url: download/upload-test-1786779883640047000.txt
+- link "gauntlet.txt":
+  - /url: download/gauntlet.txt
+- link "tmppfuo5zu1.txt":
+  - /url: download/tmppfuo5zu1.txt
+- link "rf_upload_6ndq754s.txt":
+  - /url: download/rf_upload_6ndq754s.txt
+- link "random_data_18.txt":
+  - /url: download/random_data_18.txt
+- link "hello.txt":
+  - /url: download/hello.txt
+- link "tmp8kj7_t2u.txt":
+  - /url: download/tmp8kj7_t2u.txt
+- link "tmpxj_hvpl1.txt":
+  - /url: download/tmpxj_hvpl1.txt
+- link "1.2_AI_Fluency_Summary_16x9.pdf":
+  - /url: download/1.2_AI_Fluency_Summary_16x9.pdf
+- link "random_data.txt":
+  - /url: download/random_data.txt
+- link "d2b13140-454b-4f2f-8265-ec1ba11d8b2a.txt":
+  - /url: download/d2b13140-454b-4f2f-8265-ec1ba11d8b2a.txt
+- link "pdf-1mb.pdf":
+  - /url: download/pdf-1mb.pdf
+- link "upload-test-1786778847615866000.txt":
+  - /url: download/upload-test-1786778847615866000.txt
+- link "tmpm8hheqsg.txt":
+  - /url: download/tmpm8hheqsg.txt
+- link "7c4c8404-ab99-4381-82d2-2dcb6cbe4455.txt":
+  - /url: download/7c4c8404-ab99-4381-82d2-2dcb6cbe4455.txt
+- link "rf_upload_bikusctm.txt":
+  - /url: download/rf_upload_bikusctm.txt
+- link "b8e80bfa-9798-4223-bbe8-3454e7ab3a59.txt":
+  - /url: download/b8e80bfa-9798-4223-bbe8-3454e7ab3a59.txt
+- link "7f91cf44-c840-4da5-90d2-83878999ee79.txt":
+  - /url: download/7f91cf44-c840-4da5-90d2-83878999ee79.txt
+- link "rf_upload_rhllerr_.txt":
+  - /url: download/rf_upload_rhllerr_.txt
+- link "tmpv_t9ms4_.txt":
+  - /url: download/tmpv_t9ms4_.txt
+- link "20260311_152124.gif":
+  - /url: download/20260311_152124.gif
+- link "c6d1a815-104e-4668-84a6-8e85c912e9f2.txt":
+  - /url: download/c6d1a815-104e-4668-84a6-8e85c912e9f2.txt
+- link "test_upload.txt":
+  - /url: download/test_upload.txt
+- link "RenameFilebyMasaid.pdf":
+  - /url: download/RenameFilebyMasaid.pdf
+- link "browser-upload-probe.txt":
+  - /url: download/browser-upload-probe.txt
+- link "tmpdqc16eq1.txt":
+  - /url: download/tmpdqc16eq1.txt
+- link "upload-test-639223771555222550.txt":
+  - /url: download/upload-test-639223771555222550.txt
+- link "upload-test-1786779002307881000.txt":
+  - /url: download/upload-test-1786779002307881000.txt
+- link "6e1fc457-3f50-4f9e-b86b-3fb29dc847ef.txt":
+  - /url: download/6e1fc457-3f50-4f9e-b86b-3fb29dc847ef.txt
+- link "selenium-snapshot.png":
+  - /url: download/selenium-snapshot.png
+- link "bf229bc9-8b4c-49aa-bf66-b92cf7da6611.txt":
+  - /url: download/bf229bc9-8b4c-49aa-bf66-b92cf7da6611.txt
+- link "upload-test-1786779140313357000.txt":
+  - /url: download/upload-test-1786779140313357000.txt
+- link "tmpuny5z9og.txt":
+  - /url: download/tmpuny5z9og.txt
+- link "99cee463-4fca-4db4-8cb4-025e0473a125.txt":
+  - /url: download/99cee463-4fca-4db4-8cb4-025e0473a125.txt
+- link "upload-test-1786779345521570000.txt":
+  - /url: download/upload-test-1786779345521570000.txt
+- link "upload-test-639223746603301670.txt":
+  - /url: download/upload-test-639223746603301670.txt
+- link "tmp9fze26n_.txt":
+  - /url: download/tmp9fze26n_.txt
+- link "tmp9ed7ri5r.txt":
+  - /url: download/tmp9ed7ri5r.txt
+- link "Application Scrutiny (1).csv":
+  - /url: download/Application Scrutiny (1).csv
+- link "output.txt":
+  - /url: download/output.txt
+- link "Screenshot (1).png":
+  - /url: download/Screenshot (1).png
+- link "Screenshot 2026-03-25 225909.png":
+  - /url: download/Screenshot 2026-03-25 225909.png
+- separator
+- text: Powered by
+- link "Elemental Selenium":
+  - /url: http://elementalselenium.com/
+```
