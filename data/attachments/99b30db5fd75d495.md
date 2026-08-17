@@ -1,0 +1,218 @@
+# Page snapshot
+
+```yaml
+- link "Fork me on GitHub":
+  - /url: https://github.com/tourdedave/the-internet
+  - img "Fork me on GitHub"
+- heading "File Downloader" [level=3]
+- link "test_upload.txt":
+  - /url: download/test_upload.txt
+- link "tmprs_b5_62.txt":
+  - /url: download/tmprs_b5_62.txt
+- link "selenium-framework-upload-13616581171491348848.txt":
+  - /url: download/selenium-framework-upload-13616581171491348848.txt
+- link "image.jpg":
+  - /url: download/image.jpg
+- link "testfile.txt":
+  - /url: download/testfile.txt
+- link "7d2c5299e08a3426d5a9d62cfd8d285a1c7cb0d7 Build report.pdf":
+  - /url: download/7d2c5299e08a3426d5a9d62cfd8d285a1c7cb0d7 Build report.pdf
+- link "pliskin-bab9721e.txt":
+  - /url: download/pliskin-bab9721e.txt
+- link "227b92fc-f45c-42db-b4f2-5c6f15ff10d6.txt":
+  - /url: download/227b92fc-f45c-42db-b4f2-5c6f15ff10d6.txt
+- link "73dc4a60-f5fe-4635-8adf-5d168d0f1870.txt":
+  - /url: download/73dc4a60-f5fe-4635-8adf-5d168d0f1870.txt
+- link "tmp4kc78fqk.txt":
+  - /url: download/tmp4kc78fqk.txt
+- link "test1.txt":
+  - /url: download/test1.txt
+- link "screen.png":
+  - /url: download/screen.png
+- link "File2.txt":
+  - /url: download/File2.txt
+- link "r2_test_upload_6oa2jpcf.txt":
+  - /url: download/r2_test_upload_6oa2jpcf.txt
+- link "2af26cc4-81fb-4afd-a853-48a00fbfcd57.txt":
+  - /url: download/2af26cc4-81fb-4afd-a853-48a00fbfcd57.txt
+- link "tmpokkwl5gt.txt":
+  - /url: download/tmpokkwl5gt.txt
+- link "Images.txt":
+  - /url: download/Images.txt
+- link "demodata.json":
+  - /url: download/demodata.json
+- link "tmpumjtrs1_.txt":
+  - /url: download/tmpumjtrs1_.txt
+- link "gauntlet.txt":
+  - /url: download/gauntlet.txt
+- link "r2_test_upload_545mr21i.txt":
+  - /url: download/r2_test_upload_545mr21i.txt
+- link "Screenshot 2026-08-17 at 1.09.31 PM.png":
+  - /url: download/Screenshot 2026-08-17 at 1.09.31 PM.png
+- link "r2_test_upload_2n0ivasm.txt":
+  - /url: download/r2_test_upload_2n0ivasm.txt
+- link "hello.json":
+  - /url: download/hello.json
+- link "455baf30-0699-470f-8e4c-a0035519b6aa.txt":
+  - /url: download/455baf30-0699-470f-8e4c-a0035519b6aa.txt
+- link "archivo-de-prueba.txt":
+  - /url: download/archivo-de-prueba.txt
+- link "upload-9491389336266859104.txt":
+  - /url: download/upload-9491389336266859104.txt
+- link "screenshot.png":
+  - /url: download/screenshot.png
+- link "DESIGN-BENCHMARK.md":
+  - /url: download/DESIGN-BENCHMARK.md
+- link "r2_test_upload_8kwxtm3h.txt":
+  - /url: download/r2_test_upload_8kwxtm3h.txt
+- link "gayatri mantra 🕉️.jpeg":
+  - /url: download/gayatri mantra 🕉️.jpeg
+- link "upload-1257828651041781692.txt":
+  - /url: download/upload-1257828651041781692.txt
+- link "rf_upload_d7h3sn21.txt":
+  - /url: download/rf_upload_d7h3sn21.txt
+- link "ChatGPT Image Aug 15, 2026, 08_33_59 PM.png":
+  - /url: download/ChatGPT Image Aug 15, 2026, 08_33_59 PM.png
+- link "8cebb887-76f2-4cf3-b8f6-ee8a55ce0246.txt":
+  - /url: download/8cebb887-76f2-4cf3-b8f6-ee8a55ce0246.txt
+- link "test.txt":
+  - /url: download/test.txt
+- link "9655381d-49d4-473f-8fb2-4605e141fe01.txt":
+  - /url: download/9655381d-49d4-473f-8fb2-4605e141fe01.txt
+- link "tmp2o3taace.txt":
+  - /url: download/tmp2o3taace.txt
+- link "ffd52ab4-c691-44b9-bcb5-a4dbc7f8df9c.txt":
+  - /url: download/ffd52ab4-c691-44b9-bcb5-a4dbc7f8df9c.txt
+- 'link "upload spëcial #1.txt"':
+  - /url: "download/upload spëcial #1.txt"
+- link "tmpw7hi9csx.txt":
+  - /url: download/tmpw7hi9csx.txt
+- link "upload-17457933004531154412.txt":
+  - /url: download/upload-17457933004531154412.txt
+- link "tmp86hd2p3g.txt":
+  - /url: download/tmp86hd2p3g.txt
+- link "pliskin-76d8197c.txt":
+  - /url: download/pliskin-76d8197c.txt
+- link "upload_test.json":
+  - /url: download/upload_test.json
+- link "upload-9747182125315056303.txt":
+  - /url: download/upload-9747182125315056303.txt
+- link "report.txt":
+  - /url: download/report.txt
+- link "tmp7rcxij7b.txt":
+  - /url: download/tmp7rcxij7b.txt
+- link "rf_upload_8a658vjw.txt":
+  - /url: download/rf_upload_8a658vjw.txt
+- link "random_data_18.txt":
+  - /url: download/random_data_18.txt
+- link "Screenshot (233).png":
+  - /url: download/Screenshot (233).png
+- link "tmp1qnug3ch.txt":
+  - /url: download/tmp1qnug3ch.txt
+- link "tmplhz2_clf.txt":
+  - /url: download/tmplhz2_clf.txt
+- link "r2_test_upload_3who3byx.txt":
+  - /url: download/r2_test_upload_3who3byx.txt
+- link "Screenshot 2025-09-27 143939.png":
+  - /url: download/Screenshot 2025-09-27 143939.png
+- link "random_data.txt":
+  - /url: download/random_data.txt
+- link "sample_media_file.png":
+  - /url: download/sample_media_file.png
+- link "r2_upload_t2lktn38.txt":
+  - /url: download/r2_upload_t2lktn38.txt
+- link "checkup-1786943640-8h7i.txt":
+  - /url: download/checkup-1786943640-8h7i.txt
+- link "tmpqks1xoux.txt":
+  - /url: download/tmpqks1xoux.txt
+- link "sample-upload.txt":
+  - /url: download/sample-upload.txt
+- link "AUTO_RECEIPT_RD17847198172619964.pdf":
+  - /url: download/AUTO_RECEIPT_RD17847198172619964.pdf
+- link "rf_upload_65l7prvy.txt":
+  - /url: download/rf_upload_65l7prvy.txt
+- link "tmp_0ccs41a.txt":
+  - /url: download/tmp_0ccs41a.txt
+- 'link "Test Report for Test Run - TestNG cURL - sample-test #1.pdf"':
+  - /url: "download/Test Report for Test Run - TestNG cURL - sample-test #1.pdf"
+- link "testpzen.pdf":
+  - /url: download/testpzen.pdf
+- link "sampleFile.txt":
+  - /url: download/sampleFile.txt
+- link "solution.spec.ts":
+  - /url: download/solution.spec.ts
+- link "File1.txt":
+  - /url: download/File1.txt
+- link "פרויקט אמיתי - הדמיית דירה מלאה (מבט מלמעלה).png":
+  - /url: download/פרויקט אמיתי - הדמיית דירה מלאה (מבט מלמעלה).png
+- link "claude_upload_test.txt":
+  - /url: download/claude_upload_test.txt
+- link "IMG_0111.jpeg":
+  - /url: download/IMG_0111.jpeg
+- link "r2_test_upload_f4egaptj.txt":
+  - /url: download/r2_test_upload_f4egaptj.txt
+- link "upload-sample.txt":
+  - /url: download/upload-sample.txt
+- link "test-file.txt":
+  - /url: download/test-file.txt
+- link "tmpd58td4n3.txt":
+  - /url: download/tmpd58td4n3.txt
+- link "upload-4956706516597388772.txt":
+  - /url: download/upload-4956706516597388772.txt
+- link "pdf-1mb.pdf":
+  - /url: download/pdf-1mb.pdf
+- link "test-upload.txt":
+  - /url: download/test-upload.txt
+- link "upload-sample.pdf":
+  - /url: download/upload-sample.pdf
+- link "some-file.txt":
+  - /url: download/some-file.txt
+- link "tmpwhzagtx7.txt":
+  - /url: download/tmpwhzagtx7.txt
+- link "r2_upload_v6lv1oum.txt":
+  - /url: download/r2_upload_v6lv1oum.txt
+- link "upload-576388265058060613.txt":
+  - /url: download/upload-576388265058060613.txt
+- link "03749f96-c03c-45b3-9824-97429f37c31f.txt":
+  - /url: download/03749f96-c03c-45b3-9824-97429f37c31f.txt
+- link "tmp4hom04ql.txt":
+  - /url: download/tmp4hom04ql.txt
+- link "git commands.png":
+  - /url: download/git commands.png
+- link "testUpload.json":
+  - /url: download/testUpload.json
+- link "site.html":
+  - /url: download/site.html
+- link "sample_upload.txt":
+  - /url: download/sample_upload.txt
+- link "upload-309916567782495599.txt":
+  - /url: download/upload-309916567782495599.txt
+- link "PFG_ITEM_v2.1.4.jmx":
+  - /url: download/PFG_ITEM_v2.1.4.jmx
+- link "tmpmfqypeue.txt":
+  - /url: download/tmpmfqypeue.txt
+- link "Screenshot 2024-12-24 123053.png":
+  - /url: download/Screenshot 2024-12-24 123053.png
+- link "test_upload_file.txt":
+  - /url: download/test_upload_file.txt
+- link "e80e724e-721a-46d7-ad79-d29c0c559ec8.txt":
+  - /url: download/e80e724e-721a-46d7-ad79-d29c0c559ec8.txt
+- link "tmp05kdomyp.txt":
+  - /url: download/tmp05kdomyp.txt
+- link "tmpsbyw8vsc.txt":
+  - /url: download/tmpsbyw8vsc.txt
+- link "cruise.jpeg":
+  - /url: download/cruise.jpeg
+- link "resume.txt":
+  - /url: download/resume.txt
+- link "hello.txt":
+  - /url: download/hello.txt
+- link "tmpvzver23v.txt":
+  - /url: download/tmpvzver23v.txt
+- link "r2_test_upload_nfd4so3y.txt":
+  - /url: download/r2_test_upload_nfd4so3y.txt
+- separator
+- text: Powered by
+- link "Elemental Selenium":
+  - /url: http://elementalselenium.com/
+```
