@@ -1,0 +1,100 @@
+# Page snapshot
+
+```yaml
+- link "Fork me on GitHub":
+  - /url: https://github.com/tourdedave/the-internet
+  - img "Fork me on GitHub"
+- heading "File Downloader" [level=3]
+- link "test_sample5422649312914448506.txt":
+  - /url: download/test_sample5422649312914448506.txt
+- link "Images.txt":
+  - /url: download/Images.txt
+- link "sample_upload.txt":
+  - /url: download/sample_upload.txt
+- link "test_sample614560820029905712.txt":
+  - /url: download/test_sample614560820029905712.txt
+- link "Md Rayyan Nawaz - MCV.pdf":
+  - /url: download/Md Rayyan Nawaz - MCV.pdf
+- link "test_sample11913383043062613729.txt":
+  - /url: download/test_sample11913383043062613729.txt
+- link "pdf-1mb.pdf":
+  - /url: download/pdf-1mb.pdf
+- link "hello.txt":
+  - /url: download/hello.txt
+- link "test_sample6879070104570593774.txt":
+  - /url: download/test_sample6879070104570593774.txt
+- link "rf_upload_q5i2luo1.txt":
+  - /url: download/rf_upload_q5i2luo1.txt
+- link "k.pdf":
+  - /url: download/k.pdf
+- link "sample-upload.txt":
+  - /url: download/sample-upload.txt
+- link "sample image for file upload popup.webp":
+  - /url: download/sample image for file upload popup.webp
+- link "rf_upload_dt4goe5t.txt":
+  - /url: download/rf_upload_dt4goe5t.txt
+- link "sample.txt":
+  - /url: download/sample.txt
+- link "upload-probe.txt":
+  - /url: download/upload-probe.txt
+- link "upload-test.txt":
+  - /url: download/upload-test.txt
+- link "playwright-upload-sample.txt":
+  - /url: download/playwright-upload-sample.txt
+- link "test-upload.png":
+  - /url: download/test-upload.png
+- link "1787288840924_sampleFile.jpeg":
+  - /url: download/1787288840924_sampleFile.jpeg
+- link "test_sample17578499154726459845.txt":
+  - /url: download/test_sample17578499154726459845.txt
+- link "test_sample16296710791756657246.txt":
+  - /url: download/test_sample16296710791756657246.txt
+- link "test_upload_file.txt":
+  - /url: download/test_upload_file.txt
+- link "test-upload.txt":
+  - /url: download/test-upload.txt
+- link "sampleFile.txt":
+  - /url: download/sampleFile.txt
+- link "r2_test_upload_90r6mxia.txt":
+  - /url: download/r2_test_upload_90r6mxia.txt
+- link "kx_upload.txt":
+  - /url: download/kx_upload.txt
+- link "some-file.txt":
+  - /url: download/some-file.txt
+- link "test_sample7931717972285258389.txt":
+  - /url: download/test_sample7931717972285258389.txt
+- link "rf_upload_dvp_cs9i.txt":
+  - /url: download/rf_upload_dvp_cs9i.txt
+- link "tmptx1ljq58.txt":
+  - /url: download/tmptx1ljq58.txt
+- link "image.png":
+  - /url: download/image.png
+- link "test_upload.txt":
+  - /url: download/test_upload.txt
+- link "checkup-1787461752-d1io.txt":
+  - /url: download/checkup-1787461752-d1io.txt
+- link "random_data_18.txt":
+  - /url: download/random_data_18.txt
+- link "test_sample15177754972640662336.txt":
+  - /url: download/test_sample15177754972640662336.txt
+- link "CMR.postman_collection.json":
+  - /url: download/CMR.postman_collection.json
+- link "test_sample6447633870506859827.txt":
+  - /url: download/test_sample6447633870506859827.txt
+- link "selenium-snapshot.png":
+  - /url: download/selenium-snapshot.png
+- link "hello.json":
+  - /url: download/hello.json
+- link "testUpload.json":
+  - /url: download/testUpload.json
+- link "bcbench-upload-2026-08-22.txt":
+  - /url: download/bcbench-upload-2026-08-22.txt
+- link "ornek.txt":
+  - /url: download/ornek.txt
+- link "test_sample14719911375890279774.txt":
+  - /url: download/test_sample14719911375890279774.txt
+- separator
+- text: Powered by
+- link "Elemental Selenium":
+  - /url: http://elementalselenium.com/
+```
