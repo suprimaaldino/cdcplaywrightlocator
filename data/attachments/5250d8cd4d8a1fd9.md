@@ -1,0 +1,152 @@
+# Page snapshot
+
+```yaml
+- link "Fork me on GitHub":
+  - /url: https://github.com/tourdedave/the-internet
+  - img "Fork me on GitHub"
+- heading "File Downloader" [level=3]
+- link "testforge-download-1787560003029.txt":
+  - /url: download/testforge-download-1787560003029.txt
+- link "upload-probe.txt":
+  - /url: download/upload-probe.txt
+- link "playwrightium-12270940992731822087-test.txt":
+  - /url: download/playwrightium-12270940992731822087-test.txt
+- link "report.csv":
+  - /url: download/report.csv
+- link "rf_upload_uctzb3z5.txt":
+  - /url: download/rf_upload_uctzb3z5.txt
+- link "Sambitfile5621907362575759263.txt":
+  - /url: download/Sambitfile5621907362575759263.txt
+- link "UploadFile1.png":
+  - /url: download/UploadFile1.png
+- link "playwrightium-10705417010677954199-test.txt":
+  - /url: download/playwrightium-10705417010677954199-test.txt
+- link "r2_test_upload_dwd1xjz9.txt":
+  - /url: download/r2_test_upload_dwd1xjz9.txt
+- link "upload-ok-1787556087186.txt":
+  - /url: download/upload-ok-1787556087186.txt
+- link "test-upload.txt":
+  - /url: download/test-upload.txt
+- link "Sambitfile10300685844896343161.txt":
+  - /url: download/Sambitfile10300685844896343161.txt
+- link "testforge-download-1787560524774.txt":
+  - /url: download/testforge-download-1787560524774.txt
+- 'link "Test Report for Test Run - TestNG cURL - sample-test #1.pdf"':
+  - /url: "download/Test Report for Test Run - TestNG cURL - sample-test #1.pdf"
+- link "HousebyPranav.jpeg":
+  - /url: download/HousebyPranav.jpeg
+- link "test.txt":
+  - /url: download/test.txt
+- link "test_large_file.txt":
+  - /url: download/test_large_file.txt
+- link "test_upload_file.txt":
+  - /url: download/test_upload_file.txt
+- link "RunResult_run-1787297220595.xlsx":
+  - /url: download/RunResult_run-1787297220595.xlsx
+- link "testforge-download-1787559535956.txt":
+  - /url: download/testforge-download-1787559535956.txt
+- link "sample1.txt":
+  - /url: download/sample1.txt
+- link "pdf-1mb.pdf":
+  - /url: download/pdf-1mb.pdf
+- link "Sambitfile2580103599738437068.txt":
+  - /url: download/Sambitfile2580103599738437068.txt
+- link "testforge-download-1787560080463.txt":
+  - /url: download/testforge-download-1787560080463.txt
+- link "Images.txt":
+  - /url: download/Images.txt
+- link "testforge-download-1787559920009.txt":
+  - /url: download/testforge-download-1787559920009.txt
+- 'link "upload spëcial #1.txt"':
+  - /url: "download/upload spëcial #1.txt"
+- link "playwrightium-5927341076323524516-test.txt":
+  - /url: download/playwrightium-5927341076323524516-test.txt
+- link "upload-sample.pdf":
+  - /url: download/upload-sample.pdf
+- link "playwrightium-13367496293441551083-test.txt":
+  - /url: download/playwrightium-13367496293441551083-test.txt
+- link "Test.txt":
+  - /url: download/Test.txt
+- link "Lee Hwan Ling_Resume.docx":
+  - /url: download/Lee Hwan Ling_Resume.docx
+- link "tmpgbdmu6ao.txt":
+  - /url: download/tmpgbdmu6ao.txt
+- link "testforge-download-1787560435426.txt":
+  - /url: download/testforge-download-1787560435426.txt
+- link "rf_upload_6_7f92d8.txt":
+  - /url: download/rf_upload_6_7f92d8.txt
+- link "Sambitfile10591168421914238603.txt":
+  - /url: download/Sambitfile10591168421914238603.txt
+- link "test_upload.txt":
+  - /url: download/test_upload.txt
+- link "selenium-framework-upload-6220882794276766007.txt":
+  - /url: download/selenium-framework-upload-6220882794276766007.txt
+- link "rf_upload_0bo6f_nn.txt":
+  - /url: download/rf_upload_0bo6f_nn.txt
+- link "examplefile.json":
+  - /url: download/examplefile.json
+- link "7d2c5299e08a3426d5a9d62cfd8d285a1c7cb0d7 Build report.pdf":
+  - /url: download/7d2c5299e08a3426d5a9d62cfd8d285a1c7cb0d7 Build report.pdf
+- link "orbit_upload_test.txt":
+  - /url: download/orbit_upload_test.txt
+- link "testforge-download-1787559801059.txt":
+  - /url: download/testforge-download-1787559801059.txt
+- link "a.html":
+  - /url: download/a.html
+- link "Sambitfile4418441922658573302.txt":
+  - /url: download/Sambitfile4418441922658573302.txt
+- link "Main.png":
+  - /url: download/Main.png
+- link "小红薯测试.jpeg":
+  - /url: download/小红薯测试.jpeg
+- link "upload-sample.txt":
+  - /url: download/upload-sample.txt
+- link "random_data_18.txt":
+  - /url: download/random_data_18.txt
+- link "sample.txt":
+  - /url: download/sample.txt
+- link "upload-me.txt":
+  - /url: download/upload-me.txt
+- link "r2_test_upload_7w7r5pwz.txt":
+  - /url: download/r2_test_upload_7w7r5pwz.txt
+- link "checkup-1787548529-lbd6.txt":
+  - /url: download/checkup-1787548529-lbd6.txt
+- link "Data.json":
+  - /url: download/Data.json
+- link "RunResult_run-1787294330470.xlsx":
+  - /url: download/RunResult_run-1787294330470.xlsx
+- link "in-memory.csv":
+  - /url: download/in-memory.csv
+- link "House by Pranav.png":
+  - /url: download/House by Pranav.png
+- link "notes.txt":
+  - /url: download/notes.txt
+- link "Счет на оплату № 822 от 21 августа 2026 г.pdf":
+  - /url: download/Счет на оплату № 822 от 21 августа 2026 г.pdf
+- link "sample-upload.txt":
+  - /url: download/sample-upload.txt
+- link "upload.txt":
+  - /url: download/upload.txt
+- link "some-file.txt":
+  - /url: download/some-file.txt
+- link "Sambitfile2462962642542118082.txt":
+  - /url: download/Sambitfile2462962642542118082.txt
+- link "example.txt":
+  - /url: download/example.txt
+- link "DPMFileReceiver.7z":
+  - /url: download/DPMFileReceiver.7z
+- link "RunResult_run-1787304007175.xlsx":
+  - /url: download/RunResult_run-1787304007175.xlsx
+- link "testforge-download-1787560594330.txt":
+  - /url: download/testforge-download-1787560594330.txt
+- link "tmp55hrajxq.txt":
+  - /url: download/tmp55hrajxq.txt
+- link "generated.txt":
+  - /url: download/generated.txt
+- link "test_pdf.pdf":
+  - /url: download/test_pdf.pdf
+- separator
+- text: Powered by
+- link "Elemental Selenium":
+  - /url: http://elementalselenium.com/
+```
