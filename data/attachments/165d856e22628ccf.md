@@ -1,0 +1,286 @@
+# Page snapshot
+
+```yaml
+- link "Fork me on GitHub":
+  - /url: https://github.com/tourdedave/the-internet
+  - img "Fork me on GitHub"
+- heading "File Downloader" [level=3]
+- link "testing_firefox.pdf":
+  - /url: download/testing_firefox.pdf
+- link "upload-test.txt":
+  - /url: download/upload-test.txt
+- link "tmpwo_mxjvp.txt":
+  - /url: download/tmpwo_mxjvp.txt
+- link "testFile_large_20260901_130129.txt":
+  - /url: download/testFile_large_20260901_130129.txt
+- link "temp_upload.txt":
+  - /url: download/temp_upload.txt
+- link "pwts.txt":
+  - /url: download/pwts.txt
+- link "excel.xlsx":
+  - /url: download/excel.xlsx
+- link "testFile_spclChars_!@#$%^&_()_20260901_130252.txt":
+  - /url: download/testFile_spclChars_!@#$%^&_()_20260901_130252.txt
+- link "tmprz7w5voh.txt":
+  - /url: download/tmprz7w5voh.txt
+- link "hello.json":
+  - /url: download/hello.json
+- link "r2_test_upload_se_zg53r.txt":
+  - /url: download/r2_test_upload_se_zg53r.txt
+- link "testing_edge.pdf":
+  - /url: download/testing_edge.pdf
+- link "sample_upload.txt":
+  - /url: download/sample_upload.txt
+- link "unnamed.jpg":
+  - /url: download/unnamed.jpg
+- link "5555.png":
+  - /url: download/5555.png
+- link "Screenshot 2026-06-01 103554.png":
+  - /url: download/Screenshot 2026-06-01 103554.png
+- link "temp-test-upload.txt":
+  - /url: download/temp-test-upload.txt
+- link "WhatsApp Image 2026-03-09 at 12.09.35 (1).jpeg":
+  - /url: download/WhatsApp Image 2026-03-09 at 12.09.35 (1).jpeg
+- link "tmp04qqzg3i.txt":
+  - /url: download/tmp04qqzg3i.txt
+- link "file_1788262657754.pdf":
+  - /url: download/file_1788262657754.pdf
+- link "angular.json":
+  - /url: download/angular.json
+- link "sample-upload.txt":
+  - /url: download/sample-upload.txt
+- link "tmprp9vipwv.txt":
+  - /url: download/tmprp9vipwv.txt
+- link "evidencia-qa2.txt":
+  - /url: download/evidencia-qa2.txt
+- link "file_1788262455323.pdf":
+  - /url: download/file_1788262455323.pdf
+- link "DHANAJI JADHAV PLOT 22.pdf":
+  - /url: download/DHANAJI JADHAV PLOT 22.pdf
+- link "tmpmxzy5pw4.txt":
+  - /url: download/tmpmxzy5pw4.txt
+- link "tmpcb48krme.txt":
+  - /url: download/tmpcb48krme.txt
+- link "playwright_typescript_5yoe_roadmap.pdf":
+  - /url: download/playwright_typescript_5yoe_roadmap.pdf
+- link "_ (6).jpeg":
+  - /url: download/_ (6).jpeg
+- link "hello_world.txt":
+  - /url: download/hello_world.txt
+- link "Certificate.pdf":
+  - /url: download/Certificate.pdf
+- link "testFile_heavy_5MB_20260901_130029.txt":
+  - /url: download/testFile_heavy_5MB_20260901_130029.txt
+- link "from-memory.txt":
+  - /url: download/from-memory.txt
+- link "r2_test_upload_mfyehvvx.txt":
+  - /url: download/r2_test_upload_mfyehvvx.txt
+- link "testFile_contentVariation_20260901_125911.txt":
+  - /url: download/testFile_contentVariation_20260901_125911.txt
+- link "TextDoc.txt":
+  - /url: download/TextDoc.txt
+- link "temp-upload-test.txt":
+  - /url: download/temp-upload-test.txt
+- link "testFile_lengthyNameaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa_20260901_130212.txt":
+  - /url: download/testFile_lengthyNameaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa_20260901_130212.txt
+- link "hello.txt":
+  - /url: download/hello.txt
+- link "5a68146f96346f8dc145297d862d7cab.jpg":
+  - /url: download/5a68146f96346f8dc145297d862d7cab.jpg
+- link "Excel.xlsx":
+  - /url: download/Excel.xlsx
+- link "file_0.txt":
+  - /url: download/file_0.txt
+- link "Aura Semi conductor.pdf":
+  - /url: download/Aura Semi conductor.pdf
+- link "round7-upload-probe.txt":
+  - /url: download/round7-upload-probe.txt
+- link "pdf-1mb.pdf":
+  - /url: download/pdf-1mb.pdf
+- link "appear.txt":
+  - /url: download/appear.txt
+- link "testFile_unsupported_20260901_130315.exe":
+  - /url: download/testFile_unsupported_20260901_130315.exe
+- link "p1-browser-download-20260901.txt":
+  - /url: download/p1-browser-download-20260901.txt
+- link "r2_test_upload_hkow97v0.txt":
+  - /url: download/r2_test_upload_hkow97v0.txt
+- link "file.txt":
+  - /url: download/file.txt
+- link "receipt-check.txt":
+  - /url: download/receipt-check.txt
+- link "rf_upload_e9g3rtpi.txt":
+  - /url: download/rf_upload_e9g3rtpi.txt
+- link "file-sample_150kB.pdf":
+  - /url: download/file-sample_150kB.pdf
+- link "tmpc6fhvkbu.txt":
+  - /url: download/tmpc6fhvkbu.txt
+- link "contacts.csv":
+  - /url: download/contacts.csv
+- link "503_How a web application works step (1).docx":
+  - /url: download/503_How a web application works step (1).docx
+- link "analysis.txt":
+  - /url: download/analysis.txt
+- link "sample.pdf":
+  - /url: download/sample.pdf
+- link "Image.PNG":
+  - /url: download/Image.PNG
+- link "tmp4_50sb47.txt":
+  - /url: download/tmp4_50sb47.txt
+- link "inputdata.json":
+  - /url: download/inputdata.json
+- link "input.csv":
+  - /url: download/input.csv
+- link "rf_upload_zi6zoz91.txt":
+  - /url: download/rf_upload_zi6zoz91.txt
+- link "rf_upload_7brek69p.txt":
+  - /url: download/rf_upload_7brek69p.txt
+- link "april.pdf":
+  - /url: download/april.pdf
+- link "test.txt":
+  - /url: download/test.txt
+- link "playwright ts config.txt":
+  - /url: download/playwright ts config.txt
+- link "evidence.txt":
+  - /url: download/evidence.txt
+- link "upload_file.png":
+  - /url: download/upload_file.png
+- link "testFile_empty_20260901_125951.txt":
+  - /url: download/testFile_empty_20260901_125951.txt
+- link "random_data_17.txt":
+  - /url: download/random_data_17.txt
+- link "r2_test_upload_v8zr_nam.txt":
+  - /url: download/r2_test_upload_v8zr_nam.txt
+- link "wonder.txt":
+  - /url: download/wonder.txt
+- link "test-upload.txt":
+  - /url: download/test-upload.txt
+- link "chooser_test.csv":
+  - /url: download/chooser_test.csv
+- link "tmp3wokwqwi.txt":
+  - /url: download/tmp3wokwqwi.txt
+- link "sample.txt":
+  - /url: download/sample.txt
+- link "file.pdf":
+  - /url: download/file.pdf
+- link "archivo-de-prueba.txt":
+  - /url: download/archivo-de-prueba.txt
+- link "503_Thesamplehyperlink.pdf":
+  - /url: download/503_Thesamplehyperlink.pdf
+- link "tmpbnhn_gnu.txt":
+  - /url: download/tmpbnhn_gnu.txt
+- link "synthetic-upload.txt":
+  - /url: download/synthetic-upload.txt
+- link "TestData.xlsx":
+  - /url: download/TestData.xlsx
+- link "Employees5.xlsx":
+  - /url: download/Employees5.xlsx
+- link "file_1788262576859.pdf":
+  - /url: download/file_1788262576859.pdf
+- link "r2_test_upload_lf32uj4a.txt":
+  - /url: download/r2_test_upload_lf32uj4a.txt
+- link "fileUpload.js":
+  - /url: download/fileUpload.js
+- link "testUpload.json":
+  - /url: download/testUpload.json
+- link "upload_sample.txt":
+  - /url: download/upload_sample.txt
+- link "checkup-1788239214-n427.txt":
+  - /url: download/checkup-1788239214-n427.txt
+- link "tmpxl65u6_6.txt":
+  - /url: download/tmpxl65u6_6.txt
+- link "FLog2CFLog2CBT709.cube":
+  - /url: download/FLog2CFLog2CBT709.cube
+- link "r2_test_upload_srk51p2s.txt":
+  - /url: download/r2_test_upload_srk51p2s.txt
+- link "testFile.txt":
+  - /url: download/testFile.txt
+- link "image.png":
+  - /url: download/image.png
+- link "test_upload.txt":
+  - /url: download/test_upload.txt
+- link "Iterative_incremental.png":
+  - /url: download/Iterative_incremental.png
+- link "Beleg_Test_RE4711.txt":
+  - /url: download/Beleg_Test_RE4711.txt
+- link "Playwright Locators.pdf":
+  - /url: download/Playwright Locators.pdf
+- link "adactin.png":
+  - /url: download/adactin.png
+- link "r2_test_upload_hw_8gx9l.txt":
+  - /url: download/r2_test_upload_hw_8gx9l.txt
+- link "git-cheatsheet.pdf":
+  - /url: download/git-cheatsheet.pdf
+- link "playwright-upload.txt":
+  - /url: download/playwright-upload.txt
+- link "7d2c5299e08a3426d5a9d62cfd8d285a1c7cb0d7 Build report.pdf":
+  - /url: download/7d2c5299e08a3426d5a9d62cfd8d285a1c7cb0d7 Build report.pdf
+- link "student.txt":
+  - /url: download/student.txt
+- link "t1.txt":
+  - /url: download/t1.txt
+- link "playwright-test.txt":
+  - /url: download/playwright-test.txt
+- link "upload.txt":
+  - /url: download/upload.txt
+- link "smoke-upload.txt":
+  - /url: download/smoke-upload.txt
+- link "r2_test_upload_52qb2lc9.txt":
+  - /url: download/r2_test_upload_52qb2lc9.txt
+- link "day_84_upload_test.txt":
+  - /url: download/day_84_upload_test.txt
+- link "r2_test_upload_aq_kwf8y.txt":
+  - /url: download/r2_test_upload_aq_kwf8y.txt
+- link "myfile.txt":
+  - /url: download/myfile.txt
+- link "error-context (1).md":
+  - /url: download/error-context (1).md
+- link "spectrum-logo.png":
+  - /url: download/spectrum-logo.png
+- link "resume.pdf":
+  - /url: download/resume.pdf
+- link "r2_test_upload_mir07gwe.txt":
+  - /url: download/r2_test_upload_mir07gwe.txt
+- link "upload-sample.txt":
+  - /url: download/upload-sample.txt
+- link "random_data_18.txt":
+  - /url: download/random_data_18.txt
+- link "icon-apache.png":
+  - /url: download/icon-apache.png
+- link "sample-upload-image.svg":
+  - /url: download/sample-upload-image.svg
+- link "Screenshot (2).png":
+  - /url: download/Screenshot (2).png
+- link "test_upload_file.txt":
+  - /url: download/test_upload_file.txt
+- link "testing.pdf":
+  - /url: download/testing.pdf
+- link "Images.txt":
+  - /url: download/Images.txt
+- link "pw-disk-upload.txt":
+  - /url: download/pw-disk-upload.txt
+- link "selenium-snapshot.png":
+  - /url: download/selenium-snapshot.png
+- link "webdriverIO.png":
+  - /url: download/webdriverIO.png
+- link "01_Enumeration.pdf":
+  - /url: download/01_Enumeration.pdf
+- link "Screenshot 2025-09-28 092257.png":
+  - /url: download/Screenshot 2025-09-28 092257.png
+- link "Screenshot 2026-07-28 115232.png":
+  - /url: download/Screenshot 2026-07-28 115232.png
+- link "sampleFile.txt":
+  - /url: download/sampleFile.txt
+- link "testing.mp3":
+  - /url: download/testing.mp3
+- link "_prueba-subida.txt":
+  - /url: download/_prueba-subida.txt
+- link "some-file.txt":
+  - /url: download/some-file.txt
+- link "example.json":
+  - /url: download/example.json
+- separator
+- text: Powered by
+- link "Elemental Selenium":
+  - /url: http://elementalselenium.com/
+```
