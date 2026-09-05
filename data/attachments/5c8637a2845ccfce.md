@@ -1,0 +1,160 @@
+# Page snapshot
+
+```yaml
+- link "Fork me on GitHub":
+  - /url: https://github.com/tourdedave/the-internet
+  - img "Fork me on GitHub"
+- heading "File Downloader" [level=3]
+- link "t1.txt":
+  - /url: download/t1.txt
+- link "random_data_18.txt":
+  - /url: download/random_data_18.txt
+- link "Test.txt":
+  - /url: download/Test.txt
+- link "dinner.txt":
+  - /url: download/dinner.txt
+- link "Images.txt":
+  - /url: download/Images.txt
+- link "IMG.JPG":
+  - /url: download/IMG.JPG
+- link "autotest.txt":
+  - /url: download/autotest.txt
+- link "CGLE_Reopen_23062026.pdf":
+  - /url: download/CGLE_Reopen_23062026.pdf
+- link "checkup-1788584757-ve4w.txt":
+  - /url: download/checkup-1788584757-ve4w.txt
+- link "rf_upload_re0ryg9o.txt":
+  - /url: download/rf_upload_re0ryg9o.txt
+- link "codex-browser-test-7f2c9a41.txt":
+  - /url: download/codex-browser-test-7f2c9a41.txt
+- link "archivo-de-prueba.txt":
+  - /url: download/archivo-de-prueba.txt
+- link "rf_upload_6qbjv2bp.txt":
+  - /url: download/rf_upload_6qbjv2bp.txt
+- link "final_paper (2) (2).pdf":
+  - /url: download/final_paper (2) (2).pdf
+- link "tmpqbyce7v6 (2).txt":
+  - /url: download/tmpqbyce7v6 (2).txt
+- link "sample-upload.txt":
+  - /url: download/sample-upload.txt
+- link "playwright.png":
+  - /url: download/playwright.png
+- link "doc.pdf":
+  - /url: download/doc.pdf
+- link "upload-marker.txt":
+  - /url: download/upload-marker.txt
+- link "stand.txt":
+  - /url: download/stand.txt
+- link "upload-sample.txt":
+  - /url: download/upload-sample.txt
+- link "New Text Document.txt":
+  - /url: download/New Text Document.txt
+- link "DockerCommands.txt":
+  - /url: download/DockerCommands.txt
+- link "git-cheatsheet.pdf":
+  - /url: download/git-cheatsheet.pdf
+- link "smoke-upload.txt":
+  - /url: download/smoke-upload.txt
+- link "Default.jpg":
+  - /url: download/Default.jpg
+- link "test-image.png":
+  - /url: download/test-image.png
+- link "priyanka.txt":
+  - /url: download/priyanka.txt
+- link "pw-disk-upload.txt":
+  - /url: download/pw-disk-upload.txt
+- link "testUpload.json":
+  - /url: download/testUpload.json
+- link "upload-test.txt":
+  - /url: download/upload-test.txt
+- link "Abstract1.jpg":
+  - /url: download/Abstract1.jpg
+- link "login_test_data.csv":
+  - /url: download/login_test_data.csv
+- link "upload_sample.txt":
+  - /url: download/upload_sample.txt
+- link "smoke-test.png":
+  - /url: download/smoke-test.png
+- link "DummyFile.txt":
+  - /url: download/DummyFile.txt
+- link "form2.pdf":
+  - /url: download/form2.pdf
+- link "temp_upload.txt":
+  - /url: download/temp_upload.txt
+- link "targetScreenshot (3).png":
+  - /url: download/targetScreenshot (3).png
+- link "DeloitteIDCard.jpeg":
+  - /url: download/DeloitteIDCard.jpeg
+- link "gauntlet.txt":
+  - /url: download/gauntlet.txt
+- link "myfile.txt":
+  - /url: download/myfile.txt
+- link "laporan-bulanan.txt":
+  - /url: download/laporan-bulanan.txt
+- link "upload.txt":
+  - /url: download/upload.txt
+- link "pdf-1mb.pdf":
+  - /url: download/pdf-1mb.pdf
+- link "random_data_17.txt":
+  - /url: download/random_data_17.txt
+- link "pooja.txt":
+  - /url: download/pooja.txt
+- link "Screenshot 2026-06-01 103554.png":
+  - /url: download/Screenshot 2026-06-01 103554.png
+- link "sample.txt":
+  - /url: download/sample.txt
+- link "test-upload.txt":
+  - /url: download/test-upload.txt
+- link "sampleFile.txt":
+  - /url: download/sampleFile.txt
+- link "selenium-snapshot.png":
+  - /url: download/selenium-snapshot.png
+- link "test_upload_14278781733215856201.txt":
+  - /url: download/test_upload_14278781733215856201.txt
+- link "some-file.txt":
+  - /url: download/some-file.txt
+- link "QA_Interview_Prep_Chathuni.docx":
+  - /url: download/QA_Interview_Prep_Chathuni.docx
+- link "MODULE_2_MSS.pdf":
+  - /url: download/MODULE_2_MSS.pdf
+- link "upload_test.txt":
+  - /url: download/upload_test.txt
+- link "test_upload_file.txt":
+  - /url: download/test_upload_file.txt
+- link "_Rushikesh RESUME.pdf":
+  - /url: download/_Rushikesh RESUME.pdf
+- link "python-3.13.15-amd64.exe":
+  - /url: download/python-3.13.15-amd64.exe
+- link "ICICIS2026_Paper1097_Presentation.pptx":
+  - /url: download/ICICIS2026_Paper1097_Presentation.pptx
+- link "test-file.txt":
+  - /url: download/test-file.txt
+- link "tmpqbyce7v6.txt":
+  - /url: download/tmpqbyce7v6.txt
+- link "rf_upload_joc9d4kg.txt":
+  - /url: download/rf_upload_joc9d4kg.txt
+- link "test_upload.txt":
+  - /url: download/test_upload.txt
+- link "playwright-test.txt":
+  - /url: download/playwright-test.txt
+- link "operation.txt":
+  - /url: download/operation.txt
+- link "sample.csv":
+  - /url: download/sample.csv
+- link "file.txt":
+  - /url: download/file.txt
+- link "AlgoTest_Conversation.docx":
+  - /url: download/AlgoTest_Conversation.docx
+- link "dummy-upload.txt":
+  - /url: download/dummy-upload.txt
+- link "evidence.txt":
+  - /url: download/evidence.txt
+- link "playwright-upload.txt":
+  - /url: download/playwright-upload.txt
+- link "sample.pdf":
+  - /url: download/sample.pdf
+- separator
+- text: Powered by
+- link "Elemental Selenium":
+  - /url: http://elementalselenium.com/
+```
