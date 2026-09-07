@@ -1,0 +1,362 @@
+# Page snapshot
+
+```yaml
+- link "Fork me on GitHub":
+  - /url: https://github.com/tourdedave/the-internet
+  - img "Fork me on GitHub"
+- heading "File Downloader" [level=3]
+- link "Screenshot 2026-08-31 at 1.07.41 PM.png":
+  - /url: download/Screenshot 2026-08-31 at 1.07.41 PM.png
+- link "sample_media_file.png":
+  - /url: download/sample_media_file.png
+- link "webdriverIO.png":
+  - /url: download/webdriverIO.png
+- link "r2_test_upload_sglqirsv.txt":
+  - /url: download/r2_test_upload_sglqirsv.txt
+- link "test_upload.txt":
+  - /url: download/test_upload.txt
+- link "sampleFile.jpeg":
+  - /url: download/sampleFile.jpeg
+- link "upload-sample.pdf":
+  - /url: download/upload-sample.pdf
+- link "1.txt":
+  - /url: download/1.txt
+- link "AlgoTest_Conversation.docx":
+  - /url: download/AlgoTest_Conversation.docx
+- link "file_1788780868006.pdf":
+  - /url: download/file_1788780868006.pdf
+- link "pom.xml":
+  - /url: download/pom.xml
+- link "r2_test_upload_rgpzym77.txt":
+  - /url: download/r2_test_upload_rgpzym77.txt
+- link "200x200.png":
+  - /url: download/200x200.png
+- link "some-file.txt":
+  - /url: download/some-file.txt
+- link "Screenshot 2026-09-04 220905.png":
+  - /url: download/Screenshot 2026-09-04 220905.png
+- link "in-memory.txt":
+  - /url: download/in-memory.txt
+- link "myfile.txt":
+  - /url: download/myfile.txt
+- link "sandbox.txt":
+  - /url: download/sandbox.txt
+- link "TestData.xlsx":
+  - /url: download/TestData.xlsx
+- link "archivo-de-prueba.txt":
+  - /url: download/archivo-de-prueba.txt
+- link "QA Engineer img.png":
+  - /url: download/QA Engineer img.png
+- link "sample-upload.txt":
+  - /url: download/sample-upload.txt
+- link "drag_drop.txt":
+  - /url: download/drag_drop.txt
+- link "upload_test.txt":
+  - /url: download/upload_test.txt
+- link "image-4ef0bff1.png":
+  - /url: download/image-4ef0bff1.png
+- link "web_local.json":
+  - /url: download/web_local.json
+- link "a file with spaces & punctuation dc7aa7fd.txt":
+  - /url: download/a file with spaces & punctuation dc7aa7fd.txt
+- 'link "Test Report for Test Run - TestNG cURL - sample-test #1.pdf"':
+  - /url: "download/Test Report for Test Run - TestNG cURL - sample-test #1.pdf"
+- link "evidence.txt":
+  - /url: download/evidence.txt
+- link "Prasath Resume.pdf":
+  - /url: download/Prasath Resume.pdf
+- link "hello keerthna.txt":
+  - /url: download/hello keerthna.txt
+- link "seizure-banner.html":
+  - /url: download/seizure-banner.html
+- link "test_file_upload.py":
+  - /url: download/test_file_upload.py
+- link "upload-test.txt":
+  - /url: download/upload-test.txt
+- link "input.csv":
+  - /url: download/input.csv
+- link "logo.png":
+  - /url: download/logo.png
+- link "a file with spaces & punctuation 700ff236.txt":
+  - /url: download/a file with spaces & punctuation 700ff236.txt
+- link "Screenshot_٢٠٢٦-٠٩-٠٣-١٤-٢٥-٥٥-٠٤٩_com.miui.home.jpg":
+  - /url: download/Screenshot_٢٠٢٦-٠٩-٠٣-١٤-٢٥-٥٥-٠٤٩_com.miui.home.jpg
+- link "tmp784v2svw.txt":
+  - /url: download/tmp784v2svw.txt
+- link "TextDoc.txt":
+  - /url: download/TextDoc.txt
+- link "20260830_192204.mp4":
+  - /url: download/20260830_192204.mp4
+- link "Playwright notes.pdf":
+  - /url: download/Playwright notes.pdf
+- link "TestFile.txt":
+  - /url: download/TestFile.txt
+- link "my-test file.txt":
+  - /url: download/my-test file.txt
+- link "random_data_18.txt":
+  - /url: download/random_data_18.txt
+- link "selenium.txt":
+  - /url: download/selenium.txt
+- link "tmpkrpp0dhc.txt":
+  - /url: download/tmpkrpp0dhc.txt
+- link "toyicog25p_sample-upload.txt":
+  - /url: download/toyicog25p_sample-upload.txt
+- link "Tlog.jpg":
+  - /url: download/Tlog.jpg
+- link "image-b42a59aa.png":
+  - /url: download/image-b42a59aa.png
+- link "playwrightnotes.pdf":
+  - /url: download/playwrightnotes.pdf
+- link "apks to apk.bat":
+  - /url: download/apks to apk.bat
+- link "grocery2-receipt.jpg":
+  - /url: download/grocery2-receipt.jpg
+- link "upload-marker.txt":
+  - /url: download/upload-marker.txt
+- link "sample.txt":
+  - /url: download/sample.txt
+- link "i41oq36qng_sample-upload.txt":
+  - /url: download/i41oq36qng_sample-upload.txt
+- link "image-ae363d63.png":
+  - /url: download/image-ae363d63.png
+- link "upload-b79fc858.txt":
+  - /url: download/upload-b79fc858.txt
+- link "dashboard-preview.png":
+  - /url: download/dashboard-preview.png
+- link "public-demo.txt":
+  - /url: download/public-demo.txt
+- 'link "upload spëcial #1.txt"':
+  - /url: "download/upload spëcial #1.txt"
+- link "image-22ddfc3e.png":
+  - /url: download/image-22ddfc3e.png
+- link "upload-3b43eabb.txt":
+  - /url: download/upload-3b43eabb.txt
+- link "test-upload-1788772595213.txt":
+  - /url: download/test-upload-1788772595213.txt
+- link "temp_upload_test.txt":
+  - /url: download/temp_upload_test.txt
+- link "smoke-upload.txt":
+  - /url: download/smoke-upload.txt
+- link "WhatsApp Image 2026-09-02 at 5.41.53 PM.jpeg":
+  - /url: download/WhatsApp Image 2026-09-02 at 5.41.53 PM.jpeg
+- link "checkup-1788757613-vhi6.txt":
+  - /url: download/checkup-1788757613-vhi6.txt
+- link "upload-928075dc.txt":
+  - /url: download/upload-928075dc.txt
+- link "test-upload.txt":
+  - /url: download/test-upload.txt
+- link "rf_upload_p91lp47m.txt":
+  - /url: download/rf_upload_p91lp47m.txt
+- link "Assignment 6.pdf":
+  - /url: download/Assignment 6.pdf
+- link "picture.png":
+  - /url: download/picture.png
+- link "pw-disk-upload.txt":
+  - /url: download/pw-disk-upload.txt
+- link "C9CF5F80-810F-428B-ABA8-818583C76E9F.png":
+  - /url: download/C9CF5F80-810F-428B-ABA8-818583C76E9F.png
+- link "a file with spaces & punctuation 5bb0f1d8.txt":
+  - /url: download/a file with spaces & punctuation 5bb0f1d8.txt
+- link "rf_upload_gwtv6e3l.txt":
+  - /url: download/rf_upload_gwtv6e3l.txt
+- link "upload.txt":
+  - /url: download/upload.txt
+- link "IMG.JPG":
+  - /url: download/IMG.JPG
+- link "test.txt":
+  - /url: download/test.txt
+- link "07irl2ip9h_sample-upload.txt":
+  - /url: download/07irl2ip9h_sample-upload.txt
+- link "example.png":
+  - /url: download/example.png
+- link "doc.pdf":
+  - /url: download/doc.pdf
+- link "r2_test_upload_yja544kd.txt":
+  - /url: download/r2_test_upload_yja544kd.txt
+- link "upload-dc700acb.txt":
+  - /url: download/upload-dc700acb.txt
+- link "Fee Receipt.pdf":
+  - /url: download/Fee Receipt.pdf
+- link "file_1788780846597.pdf":
+  - /url: download/file_1788780846597.pdf
+- link "test_upload.py":
+  - /url: download/test_upload.py
+- link "morning.txt":
+  - /url: download/morning.txt
+- link "Login_screenshot_02092026_163053.png":
+  - /url: download/Login_screenshot_02092026_163053.png
+- link "renupic (1).jpg":
+  - /url: download/renupic (1).jpg
+- link "dummy_upload.txt":
+  - /url: download/dummy_upload.txt
+- link "full.png":
+  - /url: download/full.png
+- link "test_file.txt":
+  - /url: download/test_file.txt
+- link "20260805test.txt":
+  - /url: download/20260805test.txt
+- link "tmp2z2rvil_.txt":
+  - /url: download/tmp2z2rvil_.txt
+- link "t1.txt":
+  - /url: download/t1.txt
+- link "simple.txt":
+  - /url: download/simple.txt
+- link "index3.html":
+  - /url: download/index3.html
+- link "tmpde2vs28k.txt":
+  - /url: download/tmpde2vs28k.txt
+- link "7d2c5299e08a3426d5a9d62cfd8d285a1c7cb0d7 Build report.pdf":
+  - /url: download/7d2c5299e08a3426d5a9d62cfd8d285a1c7cb0d7 Build report.pdf
+- link "testUpload.json":
+  - /url: download/testUpload.json
+- link "file_1788780903682.pdf":
+  - /url: download/file_1788780903682.pdf
+- link "sample.png":
+  - /url: download/sample.png
+- link "Image.PNG":
+  - /url: download/Image.PNG
+- link "tmpo0hbflww.txt":
+  - /url: download/tmpo0hbflww.txt
+- link "browser_test.html":
+  - /url: download/browser_test.html
+- link "tmprebi5sg1.txt":
+  - /url: download/tmprebi5sg1.txt
+- link "Demo.txt":
+  - /url: download/Demo.txt
+- link "ornek.txt":
+  - /url: download/ornek.txt
+- link "test.pdf":
+  - /url: download/test.pdf
+- link "Scr1.png":
+  - /url: download/Scr1.png
+- link "Screenshot_20260907_121938.jpg":
+  - /url: download/Screenshot_20260907_121938.jpg
+- link "temp_upload.txt":
+  - /url: download/temp_upload.txt
+- link "pdf-1mb.pdf":
+  - /url: download/pdf-1mb.pdf
+- link "отчёт-日本語.txt":
+  - /url: download/отчёт-日本語.txt
+- link "file.txt":
+  - /url: download/file.txt
+- link "sampleFile.pdf":
+  - /url: download/sampleFile.pdf
+- link "hello.json":
+  - /url: download/hello.json
+- link "package-lock.json":
+  - /url: download/package-lock.json
+- link "Alert_screenshot_02092026_163052.png":
+  - /url: download/Alert_screenshot_02092026_163052.png
+- link "test-upload-1788775520807.txt":
+  - /url: download/test-upload-1788775520807.txt
+- link "bot-upload-test.txt":
+  - /url: download/bot-upload-test.txt
+- link "tmp3qxhw2gg.txt":
+  - /url: download/tmp3qxhw2gg.txt
+- link "gauntlet.txt":
+  - /url: download/gauntlet.txt
+- link "upload_sample.txt":
+  - /url: download/upload_sample.txt
+- link "test-upload-1788770576873.txt":
+  - /url: download/test-upload-1788770576873.txt
+- link "playwright-upload.txt":
+  - /url: download/playwright-upload.txt
+- link "upload-me.txt":
+  - /url: download/upload-me.txt
+- link "random_data_17.txt":
+  - /url: download/random_data_17.txt
+- link "daily-report.txt":
+  - /url: download/daily-report.txt
+- link "image-52785925.png":
+  - /url: download/image-52785925.png
+- link "git-cheatsheet.pdf":
+  - /url: download/git-cheatsheet.pdf
+- link "7cpr540he8_sample-upload.txt":
+  - /url: download/7cpr540he8_sample-upload.txt
+- link "r2_test_upload_n53w6ztq.txt":
+  - /url: download/r2_test_upload_n53w6ztq.txt
+- link "Avidapu Mounasri(FFE589) (5).pdf":
+  - /url: download/Avidapu Mounasri(FFE589) (5).pdf
+- link "image-3eafc3f1.png":
+  - /url: download/image-3eafc3f1.png
+- link "a file with spaces & punctuation a1bd26d1.txt":
+  - /url: download/a file with spaces & punctuation a1bd26d1.txt
+- link "sample.xlsx":
+  - /url: download/sample.xlsx
+- link "playwright-test.txt":
+  - /url: download/playwright-test.txt
+- link "selenium-framework-upload-14103615931566998309.txt":
+  - /url: download/selenium-framework-upload-14103615931566998309.txt
+- link "text.pdf":
+  - /url: download/text.pdf
+- link "hello.txt":
+  - /url: download/hello.txt
+- link "r2_test_upload_x6eqaw2f.txt":
+  - /url: download/r2_test_upload_x6eqaw2f.txt
+- link "upload-sample.txt":
+  - /url: download/upload-sample.txt
+- link "Practice.txt":
+  - /url: download/Practice.txt
+- link "upload-e4d0d989.txt":
+  - /url: download/upload-e4d0d989.txt
+- link "Sidhant_Jadhav_Gulf_CV.docx":
+  - /url: download/Sidhant_Jadhav_Gulf_CV.docx
+- link "Playwright Hooks and describe.pptx":
+  - /url: download/Playwright Hooks and describe.pptx
+- link "threat.txt":
+  - /url: download/threat.txt
+- link "sample.pdf":
+  - /url: download/sample.pdf
+- link "om-upload-test.txt":
+  - /url: download/om-upload-test.txt
+- link "qa_upload_probe.txt":
+  - /url: download/qa_upload_probe.txt
+- link "upload-f15075b6.txt":
+  - /url: download/upload-f15075b6.txt
+- link "selenium-upload-398491112140786869.txt":
+  - /url: download/selenium-upload-398491112140786869.txt
+- link "package.json":
+  - /url: download/package.json
+- link "Images.txt":
+  - /url: download/Images.txt
+- link "a file with spaces & punctuation 7f25f536.txt":
+  - /url: download/a file with spaces & punctuation 7f25f536.txt
+- link "rf_upload_29q3p60d.txt":
+  - /url: download/rf_upload_29q3p60d.txt
+- link "test_upload_file.txt":
+  - /url: download/test_upload_file.txt
+- link "inputdata.json":
+  - /url: download/inputdata.json
+- link "Screenshot 2026-09-04 222136.png":
+  - /url: download/Screenshot 2026-09-04 222136.png
+- link "hb-logo.png":
+  - /url: download/hb-logo.png
+- link "r2_test_upload_na4vi5ys.txt":
+  - /url: download/r2_test_upload_na4vi5ys.txt
+- link "Test1.txt":
+  - /url: download/Test1.txt
+- link "selenium-upload-11512376028063446035.txt":
+  - /url: download/selenium-upload-11512376028063446035.txt
+- link "kaneqafile.txt":
+  - /url: download/kaneqafile.txt
+- link "btweb.exe":
+  - /url: download/btweb.exe
+- link "Python_Temelleri-2.pdf":
+  - /url: download/Python_Temelleri-2.pdf
+- link "MODULE_2_MSS.pdf":
+  - /url: download/MODULE_2_MSS.pdf
+- link "test-upload-1788775841398.txt":
+  - /url: download/test-upload-1788775841398.txt
+- link "explain.txt":
+  - /url: download/explain.txt
+- link "Excel.xlsx":
+  - /url: download/Excel.xlsx
+- link "nexus-tc14-1788756803241.txt":
+  - /url: download/nexus-tc14-1788756803241.txt
+- link "uploadTest.txt":
+  - /url: download/uploadTest.txt
+- separator
+- text: Powered by
+- link "Elemental Selenium":
+  - /url: http://elementalselenium.com/
+```

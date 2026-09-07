@@ -1,1 +1,0 @@
-⚠️ Download event is unreliable in WebKit. Skipping file saving validation.
